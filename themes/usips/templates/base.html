@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{% if lang %}{{ lang }}{% else %}en{% endif %}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ config.title }}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ get_url(path='main.css') | safe }}?v={{ config.extra.build_timestamp }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+  {% include "macros/header.html" %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "macros/footer.html" %}
+
+  <!-- TODO: Add JS? -->
+  <!-- <script src="{{ get_url(path='js/main.js') }}?v={{ config.extra.build_timestamp }}"></script> -->
+
+</body>
+
+</html>

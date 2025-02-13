@@ -1,0 +1,29 @@
+name: Deploy to Github Pages
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'content/**'
+      - 'themes/**'
+      - 'config.toml'
+      - '.github/workflows/github-pages.yml'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+      - name: 'update build timestamp'
+        run: |
+          current_time=$(date -u +"%Y-%m-%d-%H-%M")
+          sed -i "s/build_timestamp = .*/build_timestamp = \"$current_time\"/" config.toml
+      - name: 'build and deploy'
+        uses: shalzz/zola-deploy-action@master
+        env:
+          PAGES_BRANCH: master
+          BUILD_DIR: .
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+          REPOSITORY: usips/usips.github.io

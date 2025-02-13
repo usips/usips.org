@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul class="footer-nav">
+          {% for item in config.extra.menu %}
+          {% if 'footer' in item.show_in %}
+          <li><a href="{{ item.url | safe }}" class="footer-link">{{ item.name }}</a></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <ul class="social-links">
+          {% if config.extra.github %}
+          <li><a href="{{ config.extra.github }}">GitHub</a></li>
+          {% endif %}
+          {% if config.extra.twitter %}
+          <li><a href="{{ config.extra.twitter }}">𝕏</a></li>
+          {% endif %}
+          {% if config.extra.facebook %}
+          <li><a href="{{ config.extra.facebook }}">Facebook</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>{{ config.description }}</p>
+      </div>
+
+    </div>
+  </div>
+</footer>
+<footer class="legal-footer">
+  <div class="container">
+    <p>Logo &copy; {{ now() | date(format="%Y") }} United States Internet Preservation Society.</p>
+    <p>Articles released under the CC0 license.</p>
+    <p class="build-info">Build: {{ config.extra.build_timestamp }}</p>
+  </div>
+</footer>

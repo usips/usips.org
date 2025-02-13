@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+
+{% block content %}
+<article class="blog-post container">
+  {% if page.extra.blog_image %}
+  <div class="post-featured-image" data-image-position="{{ page.extra.image_position | default(value='center') }}">
+    <img src="{{ get_url(path=page.extra.blog_image) }}" alt="Featured image for {{ page.title }}">
+    <div class="title-overlay">
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta">
+        {% if page.extra.author %}
+        {% set author = config.extra.authors[page.extra.author] %}
+        {% if author.image %}
+        <img src="{{ get_url(path=author.image) }}" alt="{{ author.name }}" class="author-image">
+        {% endif %}
+        <span class="author">
+          {{ author.name }}
+          {% if author.social %}
+          <a href="{{ author.social }}" target="_blank" rel="noopener" class="social-link">
+            <svg class="x-icon" viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor"
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          {% endif %}
+        </span>
+        {% endif %}
+        <time datetime="{{ page.date }}">{{ page.date | date(format="%Y/%m/%d") }}</time>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="post-content">
+    {{ page.content | safe }}
+  </div>
+
+  {% if page.extra.author %}
+  {% set author = config.extra.authors[page.extra.author] %}
+  {% if author.bio %}
+  <div class="author-bio">
+    <div class="author-info">
+      {% if author.image %}
+      <img src="{{ get_url(path=author.image) }}" alt="{{ author.name }}" class="author-image">
+      {% endif %}
+      <div class="author-details">
+        <h3 class="author-name">
+          {{ author.name }}
+          {% if author.social %}
+          <a href="{{ author.social }}" target="_blank" rel="noopener" class="social-link">
+            <svg class="x-icon" viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor"
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          {% endif %}
+        </h3>
+        <p class="author-bio-text">{{ author.bio }}</p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  <footer class="post-footer">
+    <div class="post-navigation">
+      {% if page.earlier %}
+      <a href="{{ page.earlier.permalink }}" class="prev-post">← {{ page.earlier.title }}</a>
+      {% endif %}
+      {% if page.later %}
+      <a href="{{ page.later.permalink }}" class="next-post">{{ page.later.title }} →</a>
+      {% endif %}
+    </div>
+  </footer>
+</article>
+{% endblock %}

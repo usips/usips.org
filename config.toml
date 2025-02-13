@@ -1,0 +1,49 @@
+# Basic configuration
+base_url = "/"
+title = "USIPS"
+description = "The U.S. Internet Preservation Society is a 501(c)(4) nonprofit organization dedicated to preserving the Internet, restoring privacy, and fighting against censorship."
+
+# Enable template processing for CSS
+compile_sass = true
+
+# Theme settings
+theme = "usips"
+
+# Default language
+default_language = "en"
+
+# Theme-specific settings
+[extra]
+# Build timestamp for cache busting (updated when deploying)
+build_timestamp = "2025-01-01-local"
+
+# Social media links
+github = "https://github.com/usips"
+twitter = "https://x.com/usipsorg"
+#facebook = ""
+
+menu = [
+    { url = "/us", name = "About Us", show_in = [
+        "desktop",
+        "footer",
+    ], submenu = [
+        { url = "/us/board", name = "Board of Directors" },
+        { url = "/us/contact", name = "Contact Us" },
+        { url = "/us/subscribe", name = "Newsletter" },
+    ] },
+    { url = "/issues", name = "Issues", show_in = [
+        "desktop",
+        "footer",
+    ], submenu = [
+        { url = "/issues/consumer-privacy", name = "Consumer Privacy" },
+        { url = "/issues/creativity-and-expression", name = "Creativity and Expression" },
+        { url = "/issues/fair-access-to-financial-services", name = "Fair Access to Financial Services" },
+        { url = "/issues/impartial-internet-service", name = "Impartial Internet Service" },
+    ] },
+] # Navigation menu items
+
+# Author information
+[extra.authors]
+JM = { name = "Joshua Moon", image = "image/authors/dickbutt.png", social = "https://x.com/XJosh" }
+KC = { name = "Kevin Crawley", image = "image/authors/kc.png", social = "https://x.com/kvncrw", bio = "Kevin is a software engineer and privacy advocate who has extensive experience in systems engineering and web application development. When he's not coercing LLMs into doing his bidding, he enjoys flying drones and playing with his dog." }
+MH = { name = "Matthew Hardin", image = "image/authors/dickbutt.png" }

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-logo">
+        <img src="{{ get_url(path='image/logo.large.png') }}" alt="{{ config.title }}" class="hero-logo-img" />
+      </div>
+      <div class="hero-text">
+        <h1>
+          <span class="us">United States</span>
+          <span class="rest">
+            Internet<br>
+            Preservation<br>
+            Society
+          </span>
+        </h1>
+        <p class="hero-subtitle">Promoting a better Internet for all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Issues Section -->
+<section class="featured-issues">
+  <div class="container">
+    <h2 class="section-title">Coming Soon</h2>
+    <p>Please follow <a href="https://x.com/usipsorg">@usipsorg</a> on 𝕏 for information on our launch.</p>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <h2 class="section-title">Newsletter</h2>
+    <p>Subscribe to the Newsletter for updates as we launch.</p>
+    <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+      hbspt.forms.create({
+        portalId: "241956451",
+        formId: "17726b48-6edb-417c-bafd-ae1991dda95a",
+        region: "na2"
+      });
+    </script>
+  </div>
+</section>
+
+{% endblock content %}

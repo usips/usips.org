@@ -1,0 +1,29 @@
+<header id="main-header">
+  <div class="container">
+    <a id="logo" href="{{ config.base_url }}">
+      <img src="{{ get_url(path='image/logo.small.png') }}" alt="{{ config.title }}" class="logo-img" />
+      <span class="logo-text">{{ config.title }}</span>
+    </a>
+    <nav id="main-nav">
+      <ul>
+        {% for item in config.extra.menu %}
+        {% if 'desktop' in item.show_in %}
+        <li class="{% if 'mobile' not in item.show_in %}hide-mobile{% endif %}">
+          <a href="{{ item.url | safe }}"><span>{{ item.name }}</span></a>
+          {% if item.submenu %}
+          <nav class="submenu">
+            <ul>
+              {% for subitem in item.submenu %}
+              <li>
+                <a href="{{ subitem.url | safe }}"><span>{{ subitem.name }}</span></a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
