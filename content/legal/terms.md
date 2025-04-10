@@ -70,6 +70,12 @@ You may not use the USIPS Trademarks for any product or service that does not be
 
 Your ability to use a Third-Party Trademark that appears on the USIPS Site is limited to the manner, if any, in which the USIPS Site explicitly states on the page on which such Third-Party Trademark appears that such use in such manner is authorized by the third-party owner of that Third-Party Trademark (unless your use is permissible under the law [e.g., it is "fair use"] or the owner of such Third-Party Trademark has specifically granted you the right to such use in such manner).
 
+## Refund Policy
+**Donations**: Donations are refundable within 30 days of the donation date. Requests must be submitted in writing to our support team.
+
+**Merchandise Sales**: Merchandise purchases are refundable within 90 days of the sale date, provided items are unused and in original condition.
+
+
 ## Links and Frames
 
 You may link to the USIPS as long as the link does not falsely imply association. You may not use metatags or any other "hidden text" that incorporates USIPS Trademarks or our name without our express written consent.
