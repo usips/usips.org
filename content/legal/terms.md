@@ -32,6 +32,32 @@ Please review our [Privacy Statement](/legal/privacy), which is part of this Use
 
 Except where otherwise indicated, USIPS owns or licenses the copyright in all the materials on the Site, including text, graphics, logos, button icons, audio clips, video clips, photographs, and software, and those rights are protected by United States and international copyright laws and other intellectual property laws ("USIPS Content").
 
+### DMCA Notices
+Please send DMCA notices by both certified mail and by email to the following address.
+
+<addr>
+United States Internet Preservation Society<br />
+1750 Pennsylvania Ave NW<br />
+Washington, DC 20038<br />
+Email: <a href="mailto:dmca@usips.org">dmca@usips.org</a>
+</addr>
+
+Matthew Hardin, our Secretary, is our registered DMCA agent, who can be mailed directly.
+
+<addr>
+Copyright Manager<br />
+United States Internet Preservation Society<br />
+c/o Matthew Hardin, Esq.<br />
+Hardin Law Office<br />
+101 Rainbow Drive #11506<br />
+Livingston TX 77399<br />
+Email: <a href="mailto:hardin@usips.org">hardin@usips.org</a> 
+</addr>
+
+Submitting your complaint by both mail and email facilitates a speedier response.
+
+### Article License
+
 All articles authored by the Society and its Contributors are licensed under the Creative Commons 0 license, the text of which can be found on the Creative Commons website.
 
 [https://creativecommons.org/publicdomain/zero/1.0/legalcode](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
@@ -65,3 +91,13 @@ We reserve the right to terminate the USIPS Site and this User Agreement at any 
 ## Governing Law
 
 This User Agreement is governed by the laws of the State of New York applicable to contracts made and performed there without regard to its conflicts of law principles. You agree to submit to the exclusive jurisdiction of the state and federal courts in the State and County of New York and waive any jurisdictional, venue, or inconvenient forum objections to such courts.
+
+___
+
+<addr>
+United States Internet Preservation Society<br />
+1750 Pennsylvania Ave NW<br />
+Washington, DC 20038<br />
+Phone: (423) 973-9793<br />
+Email: <a href="mailto:legal@usips.org">legal@usips.org</a>
+</addr>

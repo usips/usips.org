@@ -306,9 +306,13 @@ a {
 
     p {
         line-height: 1.6;
-        margin-bottom: 1rem;
+        margin: 1rem 0;
         font-size: 1.1rem;
         color: $text-color;
+    }
+
+    addr {
+        margin: 1rem 0;
     }
 
     ul,
@@ -837,7 +841,8 @@ a {
             margin: 2rem 0 1rem;
         }
 
-        p {
+        p,
+        addr {
             margin-bottom: 1.5rem;
         }
 
