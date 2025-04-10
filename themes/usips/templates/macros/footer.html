@@ -6,9 +6,16 @@
         <ul class="footer-nav">
           {% for item in config.extra.menu %}
           {% if 'footer' in item.show_in %}
-          <li><a href="{{ item.url | safe }}" class="footer-link">{{ item.name }}</a></li>
+          <li><a href="{{ item.url | safe }}">{{ item.name }}</a></li>
           {% endif %}
           {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul class="footer-nav">
+          <li><a href="{{ get_url(path='legal/privacy.html') }}">Privacy Policy</a></li>
+          <li><a href="{{ get_url(path='legal/terms.html') }}">Terms of Use</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -29,7 +36,6 @@
         <h3>About</h3>
         <p>{{ config.description }}</p>
       </div>
-
     </div>
   </div>
 </footer>
