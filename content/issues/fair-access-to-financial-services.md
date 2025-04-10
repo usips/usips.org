@@ -7,9 +7,9 @@ description = "Everyone deserves to make money off their work."
 
 All Americans and all American businesses deserve equitable access to ordinary payment systems, with presumption of innocence, due process in disputes, and the right to appeal termination.
 
-Payment networks are the single largest bottleneck in the financial system. They are the gatekeepers to the global economy, and they have the power to decide who gets to participate and who doesn't. This is a problem because payment networks are not neutral. They have their own interests, and they are not always aligned with the interests of the people who use them.
+Payment networks are the singlest largest bottlenecks in the financial system. They are the gatekeepers to the global economy, and they have the power to decide who gets to participate and who doesn't. This is a problem because payment networks are not neutral. They have their own interests, and they are not always aligned with the interests of the people who use them.
 
-For decades, card networks and payment processors have stifled creativity, innovation, expression, and legitimate commerce by silently blocking businesses they don't like. They must be reined in.
+For decades, card networks and payment processors have stifled creativity, innovation, expression, and legitimate commerce by silently blocking businesses they don't like. They must be reigned in.
 
 
 ## Ubiquity

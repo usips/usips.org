@@ -9,6 +9,6 @@ Anyone in the world can find any ordinary American's home address and other pers
 
 Your information is sold directly to marketers by many important businesses most Americans tend to trust. This information is then collected by "data aggregators", who will sell it online to anyone who wants it, sometimes for free.
 
-This is why you get spam calls that know your name, junk mail that knows what car you drive, and targeted Internet advertisements that know your interests.
+This is why you get spam calls that know your name, junk mail that know what car you drive, and targeted Internet advertisements that know your interests.
 
-Your home address and phone number are published online every time you buy a car, get a new cellphone contract, and even register to vote. No other developed country has this problem.
+Your home address and phone number are published online every time you buy a car, get a new cellphone contract, set up mail forwarding, and even register to vote. No other developed country has this problem.
