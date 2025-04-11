@@ -96,7 +96,7 @@ We reserve the right to terminate the USIPS Site and this User Agreement at any 
 
 ## Governing Law
 
-This User Agreement is governed by the laws of the State of New York applicable to contracts made and performed there without regard to its conflicts of law principles. You agree to submit to the exclusive jurisdiction of the state and federal courts in the State and County of New York and waive any jurisdictional, venue, or inconvenient forum objections to such courts.
+This User Agreement is governed by the laws of the State of South Dakota applicable to contracts made and performed there without regard to its conflicts of law principles. You agree to submit to the exclusive jurisdiction of the state and federal courts in the State and County of South Dakota and waive any jurisdictional, venue, or inconvenient forum objections to such courts.
 
 ___
 
