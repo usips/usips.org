@@ -40,6 +40,9 @@ menu = [
         { url = "/issues/fair-access-to-financial-services", name = "Fair Access to Financial Services" },
         { url = "/issues/impartial-internet-service", name = "Impartial Internet Service" },
     ] },
+    { url = "/support", name = "Support", show_in = [
+        "desktop"
+    ]}
 ] # Navigation menu items
 
 # Author information
