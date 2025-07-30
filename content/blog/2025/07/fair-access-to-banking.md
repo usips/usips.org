@@ -6,7 +6,8 @@ description = "Will passing S.401, Fair Access to Banking Act improve access to 
 author = "JM"
 +++
 
->"Give me control over a nation's currency, and I care not who makes its laws." — _Attributed to Mayer Amschel Rothschild_
+>"Give me control over a nation's currency, and I care not who makes its laws."  
+>— _Attributed to Mayer Amschel Rothschild_
 
 Financial services have gone on a tear and purged hundreds mature video games across multiple platforms.  More people than ever now recognize the imminent danger that these unaccountable multi-billion dollar corporations pose to our freedoms.  Lawmakers in the Senate have proposed the _Fair Access to Banking Act_ (S.401). It is a step in the right direction, not a silver bullet - but it could be.
 
