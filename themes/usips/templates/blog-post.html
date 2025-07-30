@@ -31,6 +31,8 @@
       </div>
     </div>
   </div>
+  {% else %}
+  <h1>{{ page.title }}</h1>
   {% endif %}
 
   <div class="post-content">
@@ -39,14 +41,13 @@
 
   {% if page.extra.author %}
   {% set author = config.extra.authors[page.extra.author] %}
-  {% if author.bio %}
   <div class="author-bio">
     <div class="author-info">
       {% if author.image %}
       <img src="{{ get_url(path=author.image) }}" alt="{{ author.name }}" class="author-image">
       {% endif %}
       <div class="author-details">
-        <h3 class="author-name">
+        <span class="author-name">
           {{ author.name }}
           {% if author.social %}
           <a href="{{ author.social }}" target="_blank" rel="noopener" class="social-link">
@@ -56,12 +57,18 @@
             </svg>
           </a>
           {% endif %}
-        </h3>
+        </span>
+        {% if author.title %}
+        <span class="author-title">
+          {{ author.title }}
+        </span>
+        {% endif %}
+        {% if author.bio %}
         <p class="author-bio-text">{{ author.bio }}</p>
+        {% endif %}
       </div>
     </div>
   </div>
-  {% endif %}
   {% endif %}
 
   <footer class="post-footer">

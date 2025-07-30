@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 110%;
     line-height: 1.6;
     color: $text-color;
     background-color: $background-color;
@@ -24,11 +25,21 @@ main {
 
 a {
     color: $text-color;
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover {
         color: $text-hover-color;
-        text-decoration: underline;
+    }
+}
+
+blockquote {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-left: 4px solid $primary-color;
+    padding: 0.5rem 0 0.5rem 1rem;
+    margin: 1rem 0;
+
+    >p:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -842,22 +853,25 @@ a {
     .post-content {
         line-height: 1.6;
 
-        h2,
-        h3,
-        h4 {
-            color: $primary-color;
-            margin: 2rem 0 1rem;
-        }
+        > {
 
-        p,
-        addr {
-            margin-bottom: 1.5rem;
-        }
+            h2,
+            h3,
+            h4 {
+                color: $primary-color;
+                margin: 2rem 0 1rem;
+            }
 
-        ul,
-        ol {
-            margin: 1rem 0;
-            padding-left: 2rem;
+            p,
+            addr {
+                margin-bottom: 1.5rem;
+            }
+
+            ul,
+            ol {
+                margin: 1rem 0;
+                padding-left: 2rem;
+            }
         }
     }
 
@@ -1105,10 +1119,11 @@ a {
 
         .author-details {
             flex: 1;
+            margin-bottom: 0.5rem;
 
             .author-name {
                 font-size: 1.2rem;
-                margin-bottom: 0.5rem;
+                line-height: 1.2rem;
                 color: $text-color;
                 display: flex;
                 align-items: center;
@@ -1119,10 +1134,16 @@ a {
                 }
             }
 
+            .author-title {
+                font-size: 1rem;
+                color: $secondary-color;
+                font-style: italic
+            }
+
             .author-bio-text {
                 color: $text-color;
                 line-height: 1.6;
-                margin: 0;
+                margin: 0.5rem 0 0 0;
             }
         }
     }
