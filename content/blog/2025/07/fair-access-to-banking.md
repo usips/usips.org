@@ -24,7 +24,7 @@ These are:
 
 The original purpose of breaking up the system like this was to avoid antitrust liabilities. In practice, the payment networks are a monolithic entity that act as a monopoly.
 
-Each of these companies maintains its own terms of service and each of them can block a transaction by themselves. Additionally, intermediary companies that handle card transactions are mutually and individually bound to the terms of every Card Network, so even if you never do business with Discover or American Express, you must still obey their rules if you want to accept Visa or Mastercard. You don't get to choose what card networks you patrionize: if you want to do e-commerce, you will obey all of them.
+Each of these companies maintains its own terms of service and each of them can block a transaction by themselves. Additionally, intermediary companies that handle card transactions are mutually and individually bound to the terms of every Card Network, so even if you never do business with Discover or American Express, you must still obey their rules if you want to accept Visa or Mastercard. For online businesses, there are no alternatives: you will do exactly what they want, or you will not do business at all.
 
 If you are banned from processing payments, you will not be informed why or by which point of failure. "Risk management" is considered a trade secret in the industry. You have no right to know, you cannot sue to discover what has happened, and you also have no right to appeal. These are private companies and they can do whatever they want, even if it is not in the best interest of their customers.
 
@@ -72,7 +72,7 @@ For instance, the Bill should:
 * provide punitive damages on top of the full value of the services or products denied, and
 * provide for attorney's fees and costs to the injured party should they prevail in court.
 
-These would significantly shift the balance of power away from the card networks and their partners and back towards the legal businesses that they serve. Card networks would be heavily incentivized to work with their customers, provide human support, offer transparent appeals processes, and endeavour to quickly resolve disputes out of court before damages mount up. That is what Americans deserve.
+These would significantly shift the balance of power away from the card networks and their partners and back towards the legal businesses that they serve. Card networks would be heavily incentivized to work with their customers, provide human support, offer transparent appeals processes, and endeavor to quickly resolve disputes out of court before damages mount up. That is what Americans deserve.
 
 ## Support this Bill, Encourage Your Representatives
 [Contact both your Senators](https://www.senate.gov/senators/senators-contact.htm). Senators represent your state at-large and you have a right to contact both. Encourage them to support S.401 and to strengthen it by adding the provisions mentioned above.
