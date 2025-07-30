@@ -9,7 +9,7 @@ author = "JM"
 >"Give me control over a nation's currency, and I care not who makes its laws."  
 >— _Attributed to Mayer Amschel Rothschild_
 
-Financial services have gone on a tear and purged hundreds mature video games across multiple platforms.  More people than ever now recognize the imminent danger that these unaccountable multi-billion dollar corporations pose to our freedoms.  Lawmakers in the Senate have proposed the _Fair Access to Banking Act_ (S.401). It is a step in the right direction, not a silver bullet - but it could be.
+Financial services have gone on a tear and purged hundreds of mature video games across multiple platforms.  More people than ever now recognize the imminent danger that these unaccountable multi-billion dollar corporations pose to our freedoms.  Lawmakers in the Senate have proposed the _Fair Access to Banking Act_ (S.401). It is a step in the right direction, not a silver bullet - but it could be.
 
 _You may review the text of the bill on [Congress's website](https://www.congress.gov/bill/119th-congress/senate-bill/401)._
 
@@ -24,7 +24,7 @@ These are:
 * The _Acquiring Bank_, responsible for underwriting merchants and settling transactions.
 * The _Card Network_, which is the network that connects the _Issuing Bank_ to the _Acquiring Bank_, such as Visa or Mastercard, and also sets rules and standards.
 
-Each of these companies maintains its own terms of service and each of them can block a transaction by themselves. Additionally, intermedairy companies that handle card transactions are mutually and individually bound to the terms of every Card Network, so even if you never do business with Discover or American Express, you must still obey their rules if you want to accept Visa or Mastercard. You don't get to choose what card networks you patrionize: if you want to do e-commerce, you will obey all of them.
+Each of these companies maintains its own terms of service and each of them can block a transaction by themselves. Additionally, intermediary companies that handle card transactions are mutually and individually bound to the terms of every Card Network, so even if you never do business with Discover or American Express, you must still obey their rules if you want to accept Visa or Mastercard. You don't get to choose what card networks you patrionize: if you want to do e-commerce, you will obey all of them.
 
 If you are banned from processing payments, you will not be informed why or by which point of failure. "Risk management" is considered a trade secret in the industry. You have no right to know, you cannot sue to discover what has happened, and you also have no right to appeal. These are private companies and they can do whatever they want, even if it is not in the best interest of their customers.
 
@@ -33,7 +33,7 @@ The bill sets rules for a variety of financial institutions (banks and credit un
 
 Financial services have blocked businesses for a myriad of political reasons. Examples include abortion clinics, gun stores, fossil fuel industries, and even some charities. The bill aims to prevent this by ensuring that financial institutions cannot discriminate against businesses based on their political or reputational risk.
 
-Banks and Credit Unions are the most heavily impacted. In particular, any FDIC members and NCUA members found to be in violation of the law would be banned from accessing important services, such as the Automated clearing house (ACH) network, which is used for electronic funds transfers. This would effectively cut them off from the ability to process transactions. This is very strong incentive to comply with the law.
+Banks and Credit Unions are the most heavily targeted by this legislation. In particular, any FDIC members and NCUA members found to be in violation of the law would be banned from accessing the Automated Clearing House (ACH) network. This would effectively deny them the ability to transfer funds to and from other banks and is a very strong incentive to comply and work with their members before denying them services.
 
 ### What the act _does not_ do
 The law lacks teeth for financial services: the payment networks and payment processors. Financial institutions (banks and credit unions) are not the issue. There are over 9000 such institutions accredited by the FDIC and NCUA. If you are kicked out by your bank, it is fairly easy to find another. Brick and mortar banks have healthy competition, and banks like Old Glory Bank have been started recently specifically to provide banking services to risky businesses.
@@ -57,7 +57,7 @@ Pay special attention to (c). The penalty for violating this law is extremely we
 * In 2024, the Supreme Court in _SEC v. Jarkesy_ ruled that Administrative Law Judges (ALJs) are unconstitutional, so the OCC cannot use ALJs to impose penalties. They must go through the courts, which is a lengthy and expensive process. Unless it is politically expedient for them, the OCC would never consider pursuing a case against a card network.
 
 ### What the act _should_ do
-The issue of payments is by its nature financial. To make the economic penalties effective enough to deter censorious behavior, there must be relief avaailable to those impacted by the actions of the card networks and their partners.
+The issue of payments is by its nature financial. To make the economic penalties effective enough to deter censorious behavior, there must be relief available to those impacted by the actions of the card networks and their partners.
 
 For instance, the Bill should:
 * provide civil relief to injured parties, allowing them to sue in federal court without permission from a regulatory body,
