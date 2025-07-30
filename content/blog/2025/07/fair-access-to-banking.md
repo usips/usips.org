@@ -7,9 +7,6 @@ author = "JM"
 blog_image = "image/blog/2025/07/fair-access-to-banking.webp"
 +++
 
->"Give me control over a nation's currency, and I care not who makes its laws."  
->— _Attributed to Mayer Amschel Rothschild_
-
 Financial services have gone on a tear and purged hundreds of mature video games across multiple platforms.  More people than ever now recognize the imminent danger that these unaccountable multi-billion dollar corporations pose to our freedoms.  Lawmakers in the Senate have proposed the _Fair Access to Banking Act_ (S.401). It is a step in the right direction, not a silver bullet - but it could be.
 
 _You may review the text of the bill on [Congress's website](https://www.congress.gov/bill/119th-congress/senate-bill/401)._
