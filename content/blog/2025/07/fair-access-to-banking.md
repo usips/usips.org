@@ -22,8 +22,6 @@ These are:
 * The _Acquiring Bank_, responsible for underwriting merchants and settling transactions.
 * The _Card Network_, which is the network that connects the _Issuing Bank_ to the _Acquiring Bank_, such as Visa or Mastercard, and also sets rules and standards.
 
-The original purpose of breaking up the system like this was to avoid antitrust liabilities. In practice, the payment networks are a monolithic entity that act as a monopoly.
-
 Each of these companies maintains its own terms of service and each of them can block a transaction by themselves. Additionally, intermediary companies that handle card transactions are mutually and individually bound to the terms of every Card Network, so even if you never do business with Discover or American Express, you must still obey their rules if you want to accept Visa or Mastercard. For online businesses, there are no alternatives: you will do exactly what they want, or you will not do business at all.
 
 If you are banned from processing payments, you will not be informed why or by which point of failure. "Risk management" is considered a trade secret in the industry. You have no right to know, you cannot sue to discover what has happened, and you also have no right to appeal. These are private companies and they can do whatever they want, even if it is not in the best interest of their customers.
