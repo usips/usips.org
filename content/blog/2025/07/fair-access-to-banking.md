@@ -7,7 +7,7 @@ author = "JM"
 blog_image = "image/blog/2025/07/fair-access-to-banking.webp"
 +++
 
-Financial services have gone on a tear and purged hundreds of mature video games across multiple platforms.  More people than ever now recognize the imminent danger that these unaccountable multi-billion dollar corporations pose to our freedoms.  Lawmakers in the Senate have proposed the _Fair Access to Banking Act_ (S.401). It is a step in the right direction, not a silver bullet - but it could be.
+The companies that process your credit card payments are becoming the new arbiters of what you can see and buy. By threatening to withdraw their services, these financial behemoths have forced the removal of hundreds of legal products, including mature video games, from well-known digital storefronts. This gives a few unelected executives in a boardroom immense control over free commerce and expression. To address this, the Senate has proposed _the Fair Access to Banking Act_ (S.401). While it may not solve the entire problem, it represents a vital move to rein in this power and protect a marketplace where legal goods can be sold without fear of censorship by a payment processor.
 
 _You may review the text of the bill on [Congress's website](https://www.congress.gov/bill/119th-congress/senate-bill/401)._
 
@@ -62,7 +62,7 @@ Pay special attention to (c). The penalty for payment services violating this la
 * Card networks are on the hook for only 10% of the damages they have provably inflicted.
 * The penalty is capped at $10,000 per violation. Visa alone processed $16 **trillion** in 2024.
 * The penalty is imposed by the Office of the Comptroller of the Currency, at their discretion. They are not required to impose a penalty, and they are not required to impose the maximum penalty.
-* In 2024, the Supreme Court in _SEC v. Jarkesy_ ruled that Administrative Law Judges (ALJs) are unconstitutional, so the OCC cannot use ALJs to impose penalties. They must go through the courts, which is a lengthy and expensive process. Unless it is politically expedient for them, the OCC would never consider pursuing a case against a card network.
+* In 2024, the Supreme Court in _SEC v. Jarkesy_ ruled that agencies often cannot try cases before Administrative Law Judges (ALJs), so OCC cannot use ALJs to impose penalties and would need to file suit in federal courts and take each violation to a jury trial. Getting the OCC to impose penalities for any violation would be difficult, but with this added cost it would almost never be worth it for them to pursue a case against a card network.
 
 ### What the act _should_ do
 The issue of payments is by its nature financial. To make the economic penalties effective enough to deter censorious behavior, there must be relief available directly to those impacted by the actions of the card networks and their partners.
