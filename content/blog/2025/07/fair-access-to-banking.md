@@ -12,7 +12,7 @@ The companies that process your credit card payments are becoming the new arbite
 _You may review the text of the bill on [Congress's website](https://www.congress.gov/bill/119th-congress/senate-bill/401)._
 
 ## The Gordian Knot of Financial Services
-Credit card transactions are difficult to understand by their design. There are many layers of abstraction, up to six different companies between each card swipe and the seller receiving money. Each of these steps between you and your seller is a bottleneck and single point of failure.
+Few people understand how their credit cards work and many falsely assume their bank debit cards are direct transactions between their bank and the store they are buying from. There are many layers of abstraction, and up to six different companies can be involved in the process between you and the seller. Each of these steps represents a bottleneck and single point of failure, a chance for a meddling money handler to decide against your purchase.
 
 These are:
 * The _Issuing Bank_, your bank who issued you your debit or credit card.
