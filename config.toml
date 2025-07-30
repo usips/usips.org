@@ -23,6 +23,10 @@ twitter = "https://x.com/usipsorg"
 #facebook = ""
 
 menu = [
+    { url = "/blog", name = "Blog", show_in = [
+        "desktop",
+        "footer",
+    ] },
     { url = "/us", name = "About Us", show_in = [
         "desktop",
         "footer",

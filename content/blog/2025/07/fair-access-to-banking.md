@@ -4,6 +4,7 @@ date = 2025-07-30
 description = "Will passing S.401, Fair Access to Banking Act improve access to banking services for all Americans?"
 [extra]
 author = "JM"
+blog_image = "image/blog/2025/07/fair-access-to-banking.webp"
 +++
 
 >"Give me control over a nation's currency, and I care not who makes its laws."  
@@ -65,3 +66,14 @@ For instance, the Bill should:
 * provide for attorney's fees and costs to the injured party should they prevail in court.
 
 These would significantly shift the balance of power away from the card networks and their partners and back towards the legal businesses that they serve. They would be heavily incentivized to work with their customers, provide human support, transparent appeals processes, and other ways to resolve disputes out of court. That is what Americans deserve.
+
+## Support this Bill, Encourage Your Representatives
+[Contact both your Senators](https://www.senate.gov/senators/senators-contact.htm). Senators represent your state at-large and you have a right to contact both. Encourage them to support S.401 and to strengthen it by adding the provisions mentioned above.
+
+[Contact your House of Representatives member](https://www.house.gov/representatives/find-your-representative). S.401 is a Senate bill, but the House of Representatives can also introduce similar legislation. Encourage your representative to support the Fair Access to Banking Act and to advocate for stronger protections for consumers and businesses.
+
+If you are a merchant or consumer who has been impacted by the misbehavior of the financial services industry, share your story with your representatives.
+
+Many people believe that writing their representatives is futile, but they do take note of what things people are writing about. Their jobs are very comfortable and very profitable, so they want to keep them.
+
+Thank you for reading.
