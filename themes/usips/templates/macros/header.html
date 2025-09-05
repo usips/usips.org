@@ -4,12 +4,18 @@
       <img src="{{ get_url(path='image/logo.small.png') }}" alt="{{ config.title }}" class="logo-img" />
       <span class="logo-text">{{ config.title }}</span>
     </a>
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav id="main-nav">
       <ul>
         {% for item in config.extra.menu %}
         {% if 'desktop' in item.show_in %}
-        <li class="{% if 'mobile' not in item.show_in %}hide-mobile{% endif %}">
-          <a href="{{ item.url | safe }}"><span>{{ item.name }}</span></a>
+        <li class="{% if item.submenu %} has-submenu{% endif %}">
+          <a href="{{ item.url | safe }}" {% if item.submenu %} class="submenu-toggle" {% endif %}><span>{{ item.name
+              }}</span></a>
           {% if item.submenu %}
           <nav class="submenu">
             <ul>
@@ -19,7 +25,8 @@
               </li>
               {% endfor %}
             </ul>
-            {% endif %}
+          </nav>
+          {% endif %}
         </li>
         {% endif %}
         {% endfor %}

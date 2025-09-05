@@ -23,8 +23,50 @@
 
   {% include "macros/footer.html" %}
 
-  <!-- TODO: Add JS? -->
-  <!-- <script src="{{ get_url(path='js/main.js') }}?v={{ config.extra.build_timestamp }}"></script> -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mainNav = document.getElementById('main-nav');
+      const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+      // Toggle main mobile menu
+      mobileToggle.addEventListener('click', function () {
+        mainNav.classList.toggle('mobile-open');
+        this.classList.toggle('active');
+      });
+
+      // Toggle submenus on mobile
+      submenuToggles.forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const parentLi = this.closest('li');
+            parentLi.classList.toggle('submenu-open');
+          }
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!mainNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+          mainNav.classList.remove('mobile-open');
+          mobileToggle.classList.remove('active');
+        }
+      });
+
+      // Handle window resize
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) {
+          mainNav.classList.remove('mobile-open');
+          mobileToggle.classList.remove('active');
+          document.querySelectorAll('.has-submenu').forEach(function (item) {
+            item.classList.remove('submenu-open');
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 
