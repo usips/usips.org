@@ -2,6 +2,16 @@
 
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
+{% block extra_head %}
+<meta property="og:title" content="{{ page.title }} | {{ config.title }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ current_url | safe }}">
+{% if page.extra.blog_image %}
+<meta property="og:image" content="{{ get_url(path=page.extra.blog_image) }}">
+{% endif %}
+{% endblock %}
+
+
 {% block content %}
 <article class="blog-post container">
   {% if page.extra.blog_image %}
