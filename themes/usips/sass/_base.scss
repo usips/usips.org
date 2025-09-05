@@ -934,6 +934,10 @@ blockquote {
             line-height: 1.2;
             margin: 0 0 1rem;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+            @media (max-width: 768px) {
+                font-size: 1.8rem;
+            }
         }
 
         .post-meta {
