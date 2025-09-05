@@ -1,14 +1,14 @@
 +++
 title = "USIPS Urges Supreme Court to Rein in Overbroad Copyright Liability in Sony v. Cox"
 date = 2025-09-05
-description = "We have filed a crucial brief with the Supreme Court in Sony v. Cox. Our message is clear: current copyright rules are too broad and threaten how we all use the Internet, stifle innovation, and limit vital online access for everyone."
+description = "We have filed a crucial brief with the Supreme Court in Sony v. Cox. Our message is clear: current contributory copyright law imposes liability too broadly. This threaten how we all use the Internet. It stifles innovation, and limits vital online access for everyone."
 [extra]
 author = "JM"
 blog_image = "image/blog/2025/09/usips_amicus_cox_v_sony.webp"
 +++
 
-The United States Internet Preservation Society (USIPS) has filed a crucial brief with the Supreme Court in Sony v. Cox. Our message is clear: current contributory copyright law imposes liability too broadly. This threaten how we all use the Internet. It stifle innovations, and limits vital online access for everyone.
-
+The United States Internet Preservation Society (USIPS) has filed a crucial brief with the Supreme Court in Sony v. Cox. Our message is clear: current contributory copyright law imposes liability too broadly. This threaten how we all use the Internet. It stifles innovation, and limits vital online access for everyone.
+    
 Over the last 120 years, the courts of the United States have invented out of wholecloth the concept of vicarious liability (and then consistently expanded that liability that the courts themselves created).  This doctrine is called "contributory copyright infringement." The legal theory holds in part that a company can be held liable for copyright infringement committed by its users, even if the company itself did not directly engage in any infringing activity. This is a significant departure from traditional notions of liability, which typically require some level of direct involvement or intent.
 
 The rules around contributory copyright infringement have become increasingly complex and difficult to navigate, as happens with any tort created through judicial action instead of written law. In _Sony v. Cox_, the Supreme Court has the perfect opportunity to clarify these rules and set clear standards for when companies can be held liable for the actions of their users, or to throw out these invented rules entirely.
