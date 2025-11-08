@@ -9,6 +9,18 @@
 {% if page.extra.blog_image %}
 <meta property="og:image" content="{{ get_url(path=page.extra.blog_image) }}">
 {% endif %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@usipsorg">
+{% if page.extra.blog_image %}
+<meta name="twitter:image" content="{{ get_url(path=page.extra.blog_image) }}">
+{% endif %}
+{% if page.extra.author %}
+{% set author = config.extra.authors[page.extra.author] %}
+{% if author.social %}
+{% set creator_handle = author.social | split(pat="/") | last %}
+<meta name="twitter:creator" content="@{{ creator_handle }}">
+{% endif %}
+{% endif %}
 {% endblock %}
 
 
