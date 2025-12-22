@@ -25,5 +25,6 @@ jobs:
         env:
           PAGES_BRANCH: master
           BUILD_DIR: .
+          BUILD_FLAGS: "--base-url https://usips.org"
           GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
           REPOSITORY: usips/usips.github.io
