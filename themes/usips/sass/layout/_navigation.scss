@@ -44,23 +44,35 @@
     .submenu {
         display: none;
         position: absolute;
+        top: 100%;
         right: 0;
-        background: $tertiary-color;
-        border-bottom: $primary-color 2px solid;
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-top: 2px solid $primary-color;
+        box-shadow: $shadow-dropdown;
+        min-width: 220px;
+        z-index: 1000;
 
         ul {
             flex-direction: column;
+            height: auto;
         }
 
         li {
             display: block;
+            height: auto;
+
+            &:hover {
+                background: $tertiary-color;
+            }
         }
 
         a {
-            flex-direction: column;
-            align-items: end;
+            display: block;
             padding: 0.75em 1em;
-            min-height: 44px; // Touch target
+            min-height: 44px;
+            font-weight: 500;
+            text-align: left;
         }
     }
 }
