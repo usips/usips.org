@@ -168,7 +168,9 @@
             min-width: 0;
 
             ul {
-                padding: 0 0 0 $spacing-md;
+                padding: 0 0 $spacing-xs 0;
+                margin-left: $spacing-sm;
+                border-left: 2px solid rgba(0, 0, 0, 0.1);
             }
 
             li {
@@ -179,8 +181,9 @@
 
             a {
                 padding: $spacing-xs $spacing-sm;
-                font-size: 0.95rem;
+                font-size: 0.9rem;
                 color: $text-color;
+                font-weight: 400;
             }
         }
     }
