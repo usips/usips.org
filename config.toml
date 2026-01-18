@@ -23,6 +23,10 @@ twitter = "https://x.com/usipsorg"
 #facebook = ""
 
 menu = [
+    { url = "/blog", name = "Blog", show_in = [
+        "desktop",
+        "footer",
+    ] },
     { url = "/us", name = "About Us", show_in = [
         "desktop",
         "footer",
@@ -47,12 +51,12 @@ menu = [
         { url = "/products/tartarus", name = "Tartarus" },
     ] },
     { url = "/support", name = "Support", show_in = [
-        "desktop"
-    ]}
+        "desktop",
+    ] },
 ] # Navigation menu items
 
 # Author information
 [extra.authors]
-JM = { name = "Joshua Moon", image = "image/authors/dickbutt.png", social = "https://x.com/XJosh" }
-KC = { name = "Kevin Crawley", image = "image/authors/kc.png", social = "https://x.com/kvncrw", bio = "Kevin is a software engineer and privacy advocate who has extensive experience in systems engineering and web application development. When he's not coercing LLMs into doing his bidding, he enjoys flying drones and playing with his dog." }
-MH = { name = "Matthew Hardin", image = "image/authors/dickbutt.png" }
+JM = { name = "Joshua Moon", image = "image/authors/JM.webp", social = "https://x.com/XJosh", title = "Founding Member, President, Treasurer", bio = "Antifragile systems architect. Dislikes card networks." }
+KC = { name = "Kevin Crawley", image = "image/authors/kc.png", social = "https://x.com/kvncrw", title = "Founding Member, Vice PPresident", bio = "Kevin is a software engineer and privacy advocate who has extensive experience in systems engineering and web application development. When he's not coercing LLMs into doing his bidding, he enjoys flying drones and playing with his dog." }
+MH = { name = "Matthew Hardin", image = "image/authors/dickbutt.png", title = "Founding Member, Secretary", bio = "Matthew is a privacy researcher and advocate with a background in computer science. He is passionate about open-source software and digital rights." }
