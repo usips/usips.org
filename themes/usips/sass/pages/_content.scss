@@ -244,50 +244,20 @@
     }
 }
 
-// Mission cards - style sections as cards
+// Section styling - subtle separation between sections
 .page-content .content-wrapper {
-    // Create card containers using CSS
     > h2 {
-        background: white;
-        margin: $spacing-md 0 0 0;
-        padding: $spacing-md $spacing-md $spacing-xs $spacing-md;
-        border-radius: $border-radius-md $border-radius-md 0 0;
-        box-shadow: $shadow-card;
+        margin: $spacing-lg 0 $spacing-sm 0;
+        padding-top: $spacing-md;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    // First card after intro
-    > p:first-child + h2 {
+    // First h2 doesn't need top border
+    > p:first-child + h2,
+    > h2:first-child {
+        border-top: none;
+        padding-top: 0;
         margin-top: $spacing-md;
-    }
-
-    // Content following h2 continues the card
-    > h2 + p {
-        background: white;
-        margin: 0;
-        padding: 0 $spacing-md;
-        box-shadow: $shadow-card;
-    }
-
-    > h2 + p + ul,
-    > h2 + p + ol {
-        background: white;
-        margin: 0;
-        padding: 0 $spacing-md $spacing-md $spacing-md;
-        padding-left: calc(#{$spacing-md} + 1.5rem);
-        border-radius: 0 0 $border-radius-md $border-radius-md;
-        box-shadow: $shadow-card;
-    }
-
-    // Alternating backgrounds
-    > h2:nth-of-type(even) {
-        background: $tertiary-color;
-    }
-    > h2:nth-of-type(even) + p {
-        background: $tertiary-color;
-    }
-    > h2:nth-of-type(even) + p + ul,
-    > h2:nth-of-type(even) + p + ol {
-        background: $tertiary-color;
     }
 }
 
@@ -380,22 +350,6 @@
 
         p {
             font-size: 1rem;
-        }
-    }
-
-    .page-content .content-wrapper {
-        > h2 {
-            padding: $spacing-sm;
-        }
-
-        > h2 + p {
-            padding: 0 $spacing-sm;
-        }
-
-        > h2 + p + ul,
-        > h2 + p + ol {
-            padding: 0 $spacing-sm $spacing-sm $spacing-sm;
-            padding-left: calc(#{$spacing-sm} + 1.5rem);
         }
     }
 
