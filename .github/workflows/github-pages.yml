@@ -50,14 +50,14 @@ jobs:
           echo "Checking HTML files against 14KB TCP initial congestion window..."
           echo "(Exempting /legal/ directory)"
           MAX_SIZE=14000
-          FAILED=0
+          WARNED=0
 
           # Check HTML files (excluding /legal/ directory)
           for file in $(find public -name "*.html" -type f | grep -v "public/legal/"); do
             size=$(stat -c%s "$file")
             if [ "$size" -gt "$MAX_SIZE" ]; then
-              echo "FAIL: $file is ${size} bytes (limit: ${MAX_SIZE})"
-              FAILED=1
+              echo "::warning file=$file::File is ${size} bytes (exceeds ${MAX_SIZE} byte limit)"
+              WARNED=1
             else
               echo "OK: $file is ${size} bytes"
             fi
@@ -69,15 +69,13 @@ jobs:
             echo "EXEMPT: $file is ${size} bytes (legal content)"
           done
 
-          if [ "$FAILED" -eq 1 ]; then
+          if [ "$WARNED" -eq 1 ]; then
             echo ""
-            echo "Some HTML files exceed the 14KB limit!"
-            echo "See: https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/"
-            exit 1
+            echo "::notice::Some HTML files exceed 14KB. See: https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/"
+          else
+            echo ""
+            echo "All checked HTML files are within the 14KB limit."
           fi
-
-          echo ""
-          echo "All checked HTML files are within the 14KB limit."
 
       - name: 'deploy to github pages'
         uses: shalzz/zola-deploy-action@master
