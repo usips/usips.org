@@ -40,6 +40,12 @@ menu = [
         { url = "/issues/fair-access-to-financial-services", name = "Fair Access to Financial Services" },
         { url = "/issues/impartial-internet-service", name = "Impartial Internet Service" },
     ] },
+    { url = "/products", name = "Products", show_in = [
+        "desktop",
+        "footer",
+    ], submenu = [
+        { url = "/products/tartarus", name = "Tartarus" },
+    ] },
     { url = "/support", name = "Support", show_in = [
         "desktop"
     ]}
