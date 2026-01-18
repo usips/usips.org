@@ -1,0 +1,90 @@
+@use "../variables" as *;
+
+.contact-form {
+    max-width: 600px;
+    margin: $spacing-md auto;
+    padding: $spacing-md;
+    background: white;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-card;
+
+    .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+            display: block;
+            margin-bottom: $spacing-xs;
+            color: $secondary-color;
+            font-weight: 500;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid $tertiary-color;
+            border-radius: $border-radius-sm;
+            font-size: 1rem;
+            font-family: inherit;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-color;
+                box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+            }
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: $spacing-sm;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: $border-radius-sm;
+        font-size: 1.1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+            color: white;
+        }
+    }
+
+    .form-result {
+        margin-top: $spacing-sm;
+        padding: $spacing-sm;
+        border-radius: $border-radius-sm;
+        text-align: center;
+        font-weight: 500;
+
+        &:empty {
+            display: none;
+        }
+
+        &.success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        &.error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .contact-form {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+}

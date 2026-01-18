@@ -1,0 +1,89 @@
+@use "../variables" as *;
+
+.section-title {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+    font-size: 2rem;
+    color: $text-color;
+}
+
+.issues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+}
+
+.issue-card {
+    background-color: white;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-card;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    h3 {
+        color: $text-color;
+        margin-bottom: $spacing-sm;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: $text-hover-color;
+            }
+        }
+    }
+
+    p {
+        flex-grow: 1;
+        margin-bottom: $spacing-sm;
+    }
+
+    .read-more {
+        display: inline-block;
+        color: $secondary-color;
+        text-decoration: underline;
+        font-weight: 500;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.updates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-md;
+}
+
+.update-card {
+    background-color: white;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-card;
+
+    h3 {
+        margin-bottom: $spacing-xs;
+
+        a {
+            color: $text-color;
+            text-decoration: none;
+
+            &:hover {
+                color: $text-hover-color;
+            }
+        }
+    }
+}
+
+.metadata {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: $spacing-sm;
+}

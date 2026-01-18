@@ -1,0 +1,118 @@
+@use "../variables" as *;
+
+#main-nav {
+    ul {
+        list-style: none;
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+        font-weight: 500;
+    }
+
+    li {
+        position: relative;
+        height: 100%;
+
+        &:hover {
+            color: $text-hover-color;
+            background: $tertiary-color;
+
+            .submenu {
+                display: block;
+            }
+        }
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        padding: 0 1em;
+        height: 100%;
+        white-space: nowrap;
+        text-align: right;
+    }
+
+    .submenu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background: $tertiary-color;
+        border-bottom: $primary-color 2px solid;
+
+        ul {
+            flex-direction: column;
+        }
+
+        li {
+            display: block;
+        }
+
+        a {
+            flex-direction: column;
+            align-items: end;
+            padding: 0.5em 1em;
+        }
+    }
+}
+
+.main-nav {
+    position: relative;
+    z-index: 100;
+
+    .nav-item.dropdown {
+        position: relative;
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: $background-color;
+            box-shadow: $shadow-dropdown;
+            min-width: 200px;
+            border-radius: $border-radius-sm;
+            padding: $spacing-xs 0;
+            z-index: 1000;
+
+            li {
+                display: block;
+                margin: 0;
+
+                a {
+                    padding: $spacing-xs $spacing-sm;
+                    display: block;
+                    color: $text-color;
+                    text-decoration: none;
+                    font-weight: normal;
+
+                    &:hover {
+                        background-color: darken($background-color, 5%);
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .dropdown-menu {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .main-nav {
+        ul {
+            gap: $spacing-sm;
+        }
+    }
+
+    .always-show {
+        display: block !important;
+    }
+}

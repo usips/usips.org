@@ -1,3 +1,4 @@
+// Colors
 $primary-color: #8B4513;
 $secondary-color: #4C4C4C;
 $tertiary-color: #FFF8DC;
@@ -6,3 +7,31 @@ $text-color: #4C4C4C;
 $text-hover-color: #8B4513;
 $background-color: #fffef8;
 $link-color: #8B4513;
+
+// Typography
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-family-heading: 'Trust3A-XBold', sans-serif;
+$font-family-subheading: 'Trust1A-Bold', sans-serif;
+$line-height-base: 1.6;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 3rem;
+$spacing-xl: 4rem;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+
+// Layout
+$container-max-width: 1200px;
+$content-max-width: 800px;
+
+// Shadows
+$shadow-card: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-dropdown: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;

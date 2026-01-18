@@ -1,22 +1,22 @@
-@import "_variables";
+@use "../variables" as *;
 
 footer.site-footer {
     background-color: $tertiary-color;
     color: $text-color;
-    padding: 3rem 0 1rem;
-    margin-top: 4rem;
+    padding: $spacing-lg 0 $spacing-sm;
+    margin-top: $spacing-xl;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
 }
 
 .footer-section h3 {
     color: $text-color;
-    margin-bottom: 1rem;
+    margin-bottom: $spacing-sm;
 }
 
 .social-links {
@@ -32,13 +32,13 @@ footer.site-footer {
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1rem;
+    padding-top: $spacing-sm;
     text-align: center;
 
     .build-info {
         font-size: 0.8rem;
         color: rgba(0, 0, 0, 0.5);
-        margin-top: 0.5rem;
+        margin-top: $spacing-xs;
     }
 }
 

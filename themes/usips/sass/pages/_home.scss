@@ -1,0 +1,144 @@
+@use "../variables" as *;
+
+.hero {
+    background-color: $tertiary-color;
+    color: $text-color;
+    padding: $spacing-xl 0;
+    margin-bottom: $spacing-xl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xl;
+    padding: 0 $spacing-md;
+}
+
+.hero-logo {
+    flex-shrink: 0;
+}
+
+.hero-logo-img {
+    height: 380px;
+    width: auto;
+    display: block;
+    mix-blend-mode: multiply;
+}
+
+.hero-text {
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+.hero h1 {
+    color: $text-black;
+    line-height: 1;
+    margin-bottom: $spacing-sm;
+    text-align: left;
+
+    .us {
+        font-family: $font-family-subheading;
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: $spacing-xs;
+    }
+
+    .rest {
+        font-family: $font-family-heading;
+        font-size: 3.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.1em;
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: $spacing-md;
+    opacity: 0.9;
+    color: $text-color;
+    text-align: left;
+}
+
+.hero-cta {
+    display: flex;
+    gap: $spacing-sm;
+    justify-content: flex-start;
+}
+
+.featured-issues {
+    text-align: center;
+    padding: $spacing-md 0 $spacing-xl;
+
+    .section-title {
+        color: $primary-color;
+        font-family: $font-family-heading;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+        color: $text-color;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: $line-height-base;
+
+        a {
+            color: $primary-color;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: $text-hover-color;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .hero {
+        padding: $spacing-lg 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 $spacing-sm;
+        gap: $spacing-md;
+    }
+
+    .hero-logo-img {
+        height: 280px;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        text-align: center;
+
+        .us {
+            font-size: 1.8rem;
+        }
+
+        .rest {
+            font-size: 2.5rem;
+        }
+    }
+
+    .hero-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        justify-content: center;
+    }
+}

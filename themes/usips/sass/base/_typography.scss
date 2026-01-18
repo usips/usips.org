@@ -1,0 +1,34 @@
+@use "../variables" as *;
+
+body {
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: $background-color;
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $text-hover-color;
+        text-decoration: underline;
+    }
+}
+
+@font-face {
+    font-family: 'Trust1A-Bold';
+    src: url('../fonts/Trust1A-Bold.woff2') format('woff2'),
+        url('../fonts/Trust1A-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trust3A-XBold';
+    src: url('../fonts/Trust3A-XBold.woff2') format('woff2'),
+        url('../fonts/Trust3A-XBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}

@@ -9,8 +9,15 @@ Static website for the United States Internet Preservation Society, built with Z
 ## Build and Development Commands
 
 ```bash
-# Local development
-zola serve                       # Dev server at http://127.0.0.1:1111
+# Install dependencies (first time or after package.json changes)
+npm install
+
+# TypeScript compilation
+npm run build:ts                 # Compile TS to themes/usips/static/js/
+npm run watch:ts                 # Watch mode for development
+
+# Local development (compile TS first, then serve)
+npm run build:ts && zola serve  # Dev server at http://127.0.0.1:1111
 zola serve --drafts              # Include draft posts
 
 # Building
@@ -40,6 +47,12 @@ zola check --skip-external-links # Skip external link validation
   - `blog.html` / `blog-post.html` - Blog templates
   - `macros/` - Reusable header/footer components
 - `sass/` - SCSS stylesheets (compiled automatically by Zola)
+  - `abstracts/` - Mixins and functions
+  - `base/` - Reset, typography, layout
+  - `components/` - Buttons, cards, forms, social
+  - `layout/` - Header, footer, navigation
+  - `pages/` - Home, blog, content page styles
+  - `vendors/` - Third-party overrides (HubSpot)
 - `static/` - Images, fonts, PGP keys
 
 ### Configuration
@@ -58,6 +71,18 @@ template = "page.html"
 
 For blog sections, use `page_template = "blog-post.html"` and `sort_by = "date"`.
 
+## TypeScript
+
+- Source: `src/ts/` - TypeScript source files
+- Output: `themes/usips/static/js/` - Compiled JS (gitignored)
+- Config: `tsconfig.json` - Targets ES2020 modules
+
 ## Deployment
 
-GitHub Actions (`.github/workflows/github-pages.yml`) automatically deploys to GitHub Pages on push to `master` when content/, themes/, or config.toml changes.
+GitHub Actions (`.github/workflows/github-pages.yml`) automatically:
+1. Compiles TypeScript
+2. Builds site with Zola
+3. Checks HTML file sizes (14KB limit, /legal/ exempt, for TCP initial congestion window)
+4. Deploys to GitHub Pages
+
+Triggers on push to `master` when content/, themes/, src/, config.toml, package.json, or tsconfig.json changes.

@@ -1,0 +1,38 @@
+@use "../variables" as *;
+
+#main-header {
+    background-color: $background-color;
+    box-shadow: $shadow-card;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: 8px 0;
+    color: $text-black;
+    text-decoration: none;
+
+    .logo-img {
+        height: 48px;
+        width: auto;
+        mix-blend-mode: multiply;
+    }
+
+    .logo-text {
+        font-family: $font-family-heading;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    &:hover {
+        color: $text-hover-color;
+    }
+}

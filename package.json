@@ -1,0 +1,12 @@
+{
+  "name": "usips-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:ts": "tsc",
+    "watch:ts": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}

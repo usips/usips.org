@@ -7,6 +7,9 @@ on:
       - 'content/**'
       - 'themes/**'
       - 'config.toml'
+      - 'src/**'
+      - 'package.json'
+      - 'tsconfig.json'
       - '.github/workflows/github-pages.yml'
 
 jobs:
@@ -16,11 +19,67 @@ jobs:
     steps:
       - name: 'checkout'
         uses: actions/checkout@v4
+
+      - name: 'setup node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 'install dependencies'
+        run: npm ci
+
+      - name: 'compile typescript'
+        run: npm run build:ts
+
       - name: 'update build timestamp'
         run: |
           current_time=$(date -u +"%Y-%m-%d-%H-%M")
           sed -i "s/build_timestamp = .*/build_timestamp = \"$current_time\"/" config.toml
-      - name: 'build and deploy'
+
+      - name: 'build site with zola'
+        uses: shalzz/zola-deploy-action@master
+        env:
+          PAGES_BRANCH: master
+          BUILD_DIR: .
+          BUILD_ONLY: true
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+
+      - name: 'check file sizes (14KB limit)'
+        run: |
+          echo "Checking HTML files against 14KB TCP initial congestion window..."
+          echo "(Exempting /legal/ directory)"
+          MAX_SIZE=14000
+          FAILED=0
+
+          # Check HTML files (excluding /legal/ directory)
+          for file in $(find public -name "*.html" -type f | grep -v "public/legal/"); do
+            size=$(stat -c%s "$file")
+            if [ "$size" -gt "$MAX_SIZE" ]; then
+              echo "FAIL: $file is ${size} bytes (limit: ${MAX_SIZE})"
+              FAILED=1
+            else
+              echo "OK: $file is ${size} bytes"
+            fi
+          done
+
+          # Report legal files (info only)
+          for file in $(find public/legal -name "*.html" -type f 2>/dev/null); do
+            size=$(stat -c%s "$file")
+            echo "EXEMPT: $file is ${size} bytes (legal content)"
+          done
+
+          if [ "$FAILED" -eq 1 ]; then
+            echo ""
+            echo "Some HTML files exceed the 14KB limit!"
+            echo "See: https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/"
+            exit 1
+          fi
+
+          echo ""
+          echo "All checked HTML files are within the 14KB limit."
+
+      - name: 'deploy to github pages'
         uses: shalzz/zola-deploy-action@master
         env:
           PAGES_BRANCH: master

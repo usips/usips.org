@@ -1,0 +1,27 @@
+@use "../variables" as *;
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    margin-left: $spacing-xs;
+    color: $text-color;
+    transform: translateY(2px);
+
+    &:hover {
+        color: $text-hover-color;
+    }
+
+    .x-icon {
+        display: block;
+    }
+}
+
+.post-featured-image .title-overlay .post-meta .social-link,
+.blog-post-preview .post-thumbnail .title-overlay .post-meta .social-link {
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateY(2px);
+
+    &:hover {
+        color: white;
+    }
+}

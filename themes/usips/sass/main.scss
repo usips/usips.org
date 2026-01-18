@@ -1,3 +1,17 @@
-@use "_base";
-@use "_header";
-@use "_footer";
+// Abstracts (mixins, functions - no CSS output)
+@use "abstracts";
+
+// Base styles (reset, typography, layout)
+@use "base";
+
+// Layout components (header, footer, navigation)
+@use "layout";
+
+// Reusable components (buttons, cards, forms, social)
+@use "components";
+
+// Page-specific styles (home, blog, content)
+@use "pages";
+
+// Vendor overrides (HubSpot)
+@use "vendors";

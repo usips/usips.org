@@ -1,0 +1,32 @@
+@use "../variables" as *;
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: $border-radius-sm;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+
+    &.primary {
+        background-color: white;
+        color: $primary-color;
+    }
+
+    &.secondary {
+        background-color: transparent;
+        color: $secondary-color;
+        border: 2px solid white;
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+}

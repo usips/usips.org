@@ -1,0 +1,34 @@
+@use "../variables" as *;
+
+// HubSpot form styles
+.hs-form {
+    font-family: inherit;
+
+    .hs-input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid $tertiary-color;
+        border-radius: $border-radius-sm;
+        font-size: 1rem;
+        margin-bottom: $spacing-sm;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+            box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+        }
+    }
+
+    .hs-button {
+        width: 100%;
+        padding: $spacing-sm;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: $border-radius-sm;
+        font-size: 1.1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+}

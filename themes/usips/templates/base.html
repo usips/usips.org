@@ -21,8 +21,10 @@
 
   {% include "macros/footer.html" %}
 
-  <!-- TODO: Add JS? -->
-  <!-- <script src="{{ get_url(path='js/main.js') }}?v={{ config.extra.build_timestamp }}"></script> -->
+  <!-- HubSpot Forms API -->
+  <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+  <!-- Site JavaScript -->
+  <script type="module" src="{{ get_url(path='js/main.js') }}?v={{ config.extra.build_timestamp }}"></script>
 
 </body>
 

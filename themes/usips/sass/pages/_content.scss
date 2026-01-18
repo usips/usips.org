@@ -1,0 +1,144 @@
+@use "../variables" as *;
+
+.page-content {
+    max-width: $content-max-width;
+    margin: 0 auto;
+    padding: $spacing-md $spacing-sm;
+
+    a {
+        color: $primary-color;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: $spacing-md;
+        text-align: center;
+        color: $text-black;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-top: $spacing-lg;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid $primary-color;
+        padding-bottom: $spacing-xs;
+    }
+
+    p {
+        line-height: $line-height-base;
+        margin: $spacing-sm 0;
+        font-size: 1.1rem;
+        color: $text-color;
+    }
+
+    addr {
+        margin: $spacing-sm 0;
+    }
+
+    ul,
+    ol {
+        list-style-type: none;
+        padding-left: 1.5rem;
+        margin-bottom: $spacing-md;
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+
+            &:before {
+                content: "→";
+                position: absolute;
+                left: -1.5rem;
+                color: $primary-color;
+            }
+        }
+    }
+
+    ol {
+        counter-reset: item;
+
+        li {
+            &:before {
+                content: counter(item) ".";
+                counter-increment: item;
+                font-weight: 500;
+            }
+        }
+    }
+
+    section {
+        margin-bottom: $spacing-lg;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid $tertiary-color;
+        margin: $spacing-lg 0 $spacing-md;
+    }
+
+    p.cta {
+        text-align: center;
+        font-size: 1.2rem;
+        color: $primary-color;
+        margin: $spacing-md 0;
+        padding: 1.5rem;
+        background-color: rgba($primary-color, 0.05);
+        border-radius: $border-radius-md;
+        border: 1px solid rgba($primary-color, 0.2);
+
+        a {
+            font-weight: 600;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .cta {
+        text-align: center;
+        font-size: 1.2rem;
+        color: $secondary-color;
+        margin: $spacing-sm 0;
+        padding: $spacing-sm;
+        font-style: italic;
+        font-weight: 500;
+
+        a {
+            font-weight: 600;
+            text-decoration: underline;
+            color: $primary-color;
+
+            &:hover {
+                text-decoration: underline;
+                color: $secondary-color;
+            }
+        }
+
+        p {
+            font-size: inherit;
+            color: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .page-content {
+        padding: $spacing-sm;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
