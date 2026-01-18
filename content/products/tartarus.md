@@ -5,15 +5,17 @@ date = 2025-02-07
 description = "A free, open-source shield protecting independent websites from attacks."
 +++
 
-The Internet has two layers. The "Upper Internet" consists of major platforms like Google, Facebook, and Amazon. These companies have billions of dollars to spend on infrastructure and security. When someone tries to attack them, they shrug it off.
+The Internet has gone from tens of thousands of independent websites to a clearly stratified landscape. In our current environment, there is very little competition, and big businesses benefit monopolize the resources needed to handle large-scale attacks.
 
-Then there's the "Lower Internet" - small forums, independent news sites, hobbyist communities, and personal blogs. These websites often run on shoestring budgets with volunteer administrators. They can't afford enterprise security solutions. Yet they're frequently under attack from trolls, hacktivists, and bad actors who want to silence them.
+The "Upper Internet" consists of major platforms like Google, Facebook, and Amazon. These companies have billions of dollars to spend on infrastructure and security. When someone tries to attack them, it is simply the cost of doing business.
 
-Many of these small sites punch far above their weight in cultural importance. They're where subcultures form, where controversial ideas are debated, and where communities gather outside the watchful eye of Big Tech. They're the spiritual successors to early internet message boards and the birthplace of countless memes, movements, and innovations.
+Then there's the "Lower Internet": small forums, independent news sites, hobbyist communities, and personal blogs. These websites often run on shoestring budgets with volunteer administrators. They can't afford enterprise security solutions, but due to their significance, they find themselves under attack on all fronts by those who want to silence them. Hackers, government censors, spammers, bad actors, and political activists all target these small sites, knowing they are vulnerable. A small forum faces the problems as large corporations, but without the resources to defend itself.
 
-But they're also fragile. A single determined attacker can knock an independent site offline for days or weeks. Traditional DDoS protection services cost hundreds or thousands of dollars per month - money these sites simply don't have. And even when they can afford protection, they're often denied service because their content is too controversial for corporate providers.
+Many of these small sites punch far above their weight in cultural importance. They're where subcultures form, where controversial ideas are debated, and where communities gather outside the watchful eye of Big Tech. They're the spiritual successors to early Internet message boards and the birthplace of countless memes, movements, and innovations.
 
-**Tartarus exists to solve this problem.**
+But they're also fragile. A single determined attacker can knock an independent site offline for days or weeks. Traditional DDoS protection services cost hundreds or thousands of dollars per month - money these sites simply don't have. And even when they can afford protection, or when it is offered for "free", they're often denied service because their content is too controversial for corporate providers.
+
+**Tartarus exists to solve this problem.** It is our solution for the Lower Internet's security problems, and it is born out of necessity by the very communities it aims to protect.
 
 ## What it does
 
@@ -33,20 +35,14 @@ When an attack comes, Tartarus absorbs the blow. Your website stays online.
 
 Unlike commercial DDoS protection services:
 
-- **It's free and open source.** The code is public. Anyone can inspect it, improve it, or run their own instance.
-
-- **No content restrictions.** We don't police what websites we protect. If it's legal, we'll help defend it.
+- **No content restrictions.** We don't police what websites we protect. If it's US legal, we defend it.
 
 - **Built for the little guy.** Tartarus is designed to run cheaply and efficiently, not to maximize profit.
 
 - **Community-supported.** Development is funded by donations and contributions, not by selling user data or charging premium fees.
 
-## The name
-
-In Greek mythology, Tartarus was the deepest dungeon of the underworld - a place where threats were imprisoned and kept away from the world above. Our Tartarus does the same for the Internet, trapping malicious traffic before it can reach the sites and communities you care about.
-
 ## Get involved
 
-Tartarus is under active development. If you're a developer interested in helping protect the Lower Internet, check out the source code on [GitHub](https://github.com/usips/tartarus-rs).
+Tartarus is under active development. If you're a developer interested in helping protect the Lower Internet, check out the source code on [GitHub](https://github.com/usips/tartarus-rs). If you would like to financially support our development, please sponsor us on [GitHub Sponsors](https://github.com/sponsors/usips)!
 
-If you run an independent website and need protection, [contact us](/us/contact) to learn about getting started.
+If you run an independent website and need help, [reach out to Joshua Moon](/us/board).
