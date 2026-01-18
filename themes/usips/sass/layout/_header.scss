@@ -76,16 +76,107 @@
     }
 }
 
+// Mobile menu toggle - hidden on desktop
+#mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: $text-black;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    &.active {
+        span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        span:nth-child(2) {
+            opacity: 0;
+        }
+        span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    }
+}
+
 @media (max-width: $breakpoint-mobile) {
-    #main-nav .nav-sponsor {
-        margin-left: $spacing-xs;
+    #mobile-menu-toggle {
+        display: flex;
+    }
 
-        .sponsor-link {
-            padding: 0.5rem 0.75rem;
+    #main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: $background-color;
+        box-shadow: $shadow-dropdown;
+        z-index: 1000;
 
-            span {
-                display: none;
+        &.mobile-open {
+            display: block;
+        }
+
+        ul {
+            flex-direction: column;
+            padding: $spacing-sm;
+        }
+
+        li {
+            height: auto;
+
+            &.hide-mobile {
+                display: block !important;
             }
         }
+
+        a {
+            padding: $spacing-sm;
+            justify-content: flex-start;
+        }
+
+        .submenu {
+            position: static;
+            display: block;
+            box-shadow: none;
+            border: none;
+            border-top: none;
+            background: transparent;
+            min-width: 0;
+
+            ul {
+                padding: 0 0 0 $spacing-md;
+            }
+
+            a {
+                padding: $spacing-xs $spacing-sm;
+                font-size: 0.95rem;
+            }
+        }
+    }
+
+    #main-nav .nav-sponsor {
+        margin-left: 0;
+        margin-top: $spacing-xs;
+
+        .sponsor-link {
+            justify-content: center;
+        }
+    }
+
+    #main-header .container {
+        position: relative;
     }
 }

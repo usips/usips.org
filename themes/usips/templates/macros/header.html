@@ -4,6 +4,11 @@
       <img src="{{ get_url(path='image/logo.small.png') }}" alt="{{ config.title }}" class="logo-img" />
       <span class="logo-text">{{ config.title }}</span>
     </a>
+    <button id="mobile-menu-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav id="main-nav">
       <ul>
         {% for item in config.extra.menu %}
