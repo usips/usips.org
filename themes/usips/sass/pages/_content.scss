@@ -4,13 +4,23 @@
 .page-header {
     background-color: $tertiary-color;
     padding: $spacing-lg 0;
-    margin-bottom: $spacing-md;
+    margin-bottom: 0;
 
     h1 {
         font-size: 2.5rem;
         text-align: center;
         color: $text-black;
         margin: 0;
+    }
+
+    .page-subtitle {
+        text-align: center;
+        color: $text-color;
+        font-size: 1.1rem;
+        margin: $spacing-sm 0 0 0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -21,6 +31,130 @@
         h1 {
             font-size: 2rem;
         }
+
+        .page-subtitle {
+            font-size: 1rem;
+        }
+    }
+}
+
+// Article listing page (Issues, Blog)
+.listing-page {
+    padding: $spacing-lg 0;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: $spacing-md;
+}
+
+.article-card {
+    background: white;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-card;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .article-image {
+        display: block;
+        overflow: hidden;
+        aspect-ratio: 16/9;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+
+            &[data-position="top"] { object-position: top; }
+            &[data-position="bottom"] { object-position: bottom; }
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+    }
+
+    .article-content {
+        padding: $spacing-md;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-size: 1.3rem;
+            margin: 0 0 $spacing-sm 0;
+            line-height: 1.3;
+
+            a {
+                color: $text-black;
+                text-decoration: none;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .article-description {
+            color: $text-color;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0 0 $spacing-sm 0;
+            flex-grow: 1;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: $spacing-sm;
+
+            .author {
+                font-weight: 500;
+            }
+
+            .separator {
+                margin: 0 0.4rem;
+            }
+        }
+
+        .read-more-link {
+            color: $primary-color;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Cards without images get alternating backgrounds
+.article-card:not(:has(.article-image)):nth-child(even) {
+    background: $tertiary-color;
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-card .article-content {
+        padding: $spacing-sm;
+
+        h2 {
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -28,29 +162,25 @@
 .page-content {
     max-width: $content-max-width;
     margin: 0 auto;
-    padding: 0 $spacing-sm $spacing-md;
+    padding: $spacing-md $spacing-sm;
 
     a {
         color: $primary-color;
-        padding: 2px 0; // Touch target improvement
 
         &:focus-visible {
             outline-offset: 3px;
         }
     }
 
-    // Remove old h1 styles since it's now in page-header
-    > h1 {
+    // Hide duplicate h1 since it's in page-header
+    > h1:first-child {
         display: none;
     }
 
     h2 {
-        font-size: 1.5rem;
-        margin-top: 0;
-        margin-bottom: $spacing-sm;
+        font-size: 1.4rem;
+        margin: 0 0 $spacing-sm 0;
         color: $primary-color;
-        border-bottom: none;
-        padding-bottom: 0;
 
         a {
             color: inherit;
@@ -64,25 +194,20 @@
 
     p {
         line-height: $line-height-base;
-        margin: $spacing-sm 0;
-        font-size: 1.1rem;
+        margin: 0 0 $spacing-sm 0;
+        font-size: 1.05rem;
         color: $text-color;
     }
 
-    addr {
-        margin: $spacing-sm 0;
-    }
-
-    ul,
-    ol {
+    ul, ol {
         list-style-type: none;
         padding-left: 1.5rem;
-        margin-bottom: $spacing-sm;
+        margin: 0 0 $spacing-sm 0;
 
         li {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             position: relative;
-            padding: 2px 0; // Touch target improvement
+            line-height: 1.5;
 
             &:before {
                 content: "→";
@@ -96,102 +221,110 @@
     ol {
         counter-reset: item;
 
-        li {
-            &:before {
-                content: counter(item) ".";
-                counter-increment: item;
-                font-weight: 500;
-            }
+        li:before {
+            content: counter(item) ".";
+            counter-increment: item;
+            font-weight: 500;
         }
     }
 
-    section {
-        margin-bottom: $spacing-lg;
-    }
-
-    // Horizontal rule before Get Involved
     hr {
         border: none;
-        margin: $spacing-xl 0 0;
+        margin: $spacing-lg 0;
     }
 }
 
-// Card-based layout for content sections (mission pillars)
+// Content wrapper - contains the main body content
 .content-wrapper {
-    // Style h2 sections as cards
+    // Intro paragraph (before first h2)
+    > p:first-child {
+        font-size: 1.15rem;
+        margin-bottom: $spacing-lg;
+        color: $text-color;
+    }
+}
+
+// Mission cards - style sections as cards
+.page-content .content-wrapper {
+    // Create card containers using CSS
     > h2 {
         background: white;
-        padding: $spacing-md;
-        padding-bottom: $spacing-xs;
-        margin: 0 (-$spacing-sm);
-        margin-top: $spacing-md;
+        margin: $spacing-md 0 0 0;
+        padding: $spacing-md $spacing-md $spacing-xs $spacing-md;
         border-radius: $border-radius-md $border-radius-md 0 0;
         box-shadow: $shadow-card;
     }
 
-    // First h2 gets more top margin
-    > h2:first-child {
-        margin-top: 0;
+    // First card after intro
+    > p:first-child + h2 {
+        margin-top: $spacing-md;
     }
 
-    // Paragraphs and lists following h2 continue the card
-    > h2 + p,
-    > h2 + p + ul,
-    > h2 + p + ol {
+    // Content following h2 continues the card
+    > h2 + p {
         background: white;
+        margin: 0;
         padding: 0 $spacing-md;
-        margin: 0 (-$spacing-sm);
         box-shadow: $shadow-card;
     }
 
     > h2 + p + ul,
     > h2 + p + ol {
-        padding-bottom: $spacing-md;
+        background: white;
+        margin: 0;
+        padding: 0 $spacing-md $spacing-md $spacing-md;
+        padding-left: calc(#{$spacing-md} + 1.5rem);
         border-radius: 0 0 $border-radius-md $border-radius-md;
+        box-shadow: $shadow-card;
     }
 
-    // Alternating card backgrounds
-    > h2:nth-of-type(even),
-    > h2:nth-of-type(even) + p,
+    // Alternating backgrounds
+    > h2:nth-of-type(even) {
+        background: $tertiary-color;
+    }
+    > h2:nth-of-type(even) + p {
+        background: $tertiary-color;
+    }
     > h2:nth-of-type(even) + p + ul,
     > h2:nth-of-type(even) + p + ol {
         background: $tertiary-color;
     }
 }
 
-// Get Involved section - prominent CTA
+// Get Involved section
 .content-wrapper > h1#get-involved,
 .page-content h1#get-involved {
     display: block !important;
-    background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 10%) 100%);
+    background: $primary-color;
     color: white;
-    padding: $spacing-lg $spacing-md;
-    margin: $spacing-xl (-$spacing-sm) 0;
+    padding: $spacing-md;
+    margin: $spacing-xl 0 0 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     border-radius: $border-radius-md $border-radius-md 0 0;
 }
 
-// Content following Get Involved
-.content-wrapper > h1#get-involved + p,
-.content-wrapper > h1#get-involved + p + ul {
-    background: rgba($primary-color, 0.05);
+.content-wrapper > h1#get-involved + p {
+    background: rgba($primary-color, 0.08);
     padding: $spacing-md;
-    margin: 0 (-$spacing-sm);
+    margin: 0;
     text-align: center;
     border-left: 3px solid $primary-color;
     border-right: 3px solid $primary-color;
 }
 
 .content-wrapper > h1#get-involved + p + ul {
-    padding-top: 0;
-    padding-bottom: $spacing-md;
-    border-bottom: 3px solid $primary-color;
-    border-radius: 0 0 $border-radius-md $border-radius-md;
+    background: rgba($primary-color, 0.08);
+    padding: $spacing-sm $spacing-md $spacing-md;
+    margin: 0;
+    text-align: center;
+    border-left: 3px solid $primary-color;
+    border-right: 3px solid $primary-color;
+    list-style: none;
 
     li {
         display: inline-block;
-        margin: $spacing-xs $spacing-sm;
+        margin: $spacing-xs;
         padding: 0;
 
         &:before {
@@ -200,30 +333,28 @@
 
         a {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
-            min-height: 44px; // Touch target
+            padding: 0.75rem 1.25rem;
+            min-height: 44px;
             background: white;
             border: 2px solid $primary-color;
             border-radius: $border-radius-sm;
             color: $primary-color;
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             transition: all 0.2s ease;
 
             &:hover {
                 background: $primary-color;
                 color: white;
-                text-decoration: none;
             }
         }
     }
 }
 
-// Final paragraph after Get Involved list
 .content-wrapper > h1#get-involved + p + ul + p {
-    background: rgba($primary-color, 0.05);
+    background: rgba($primary-color, 0.08);
     padding: $spacing-sm $spacing-md $spacing-md;
-    margin: 0 (-$spacing-sm);
+    margin: 0;
     text-align: center;
     font-style: italic;
     color: $secondary-color;
@@ -233,69 +364,18 @@
     border-radius: 0 0 $border-radius-md $border-radius-md;
 }
 
-// When there's a final paragraph, remove border-radius from list
-.content-wrapper > h1#get-involved + p + ul:has(+ p) {
-    border-bottom: none;
-    border-radius: 0;
-}
-
-// CTA styles (kept for compatibility)
-.page-content {
-    p.cta {
-        text-align: center;
-        font-size: 1.2rem;
-        color: $primary-color;
-        margin: $spacing-md 0;
-        padding: 1.5rem;
-        background-color: rgba($primary-color, 0.05);
-        border-radius: $border-radius-md;
-        border: 1px solid rgba($primary-color, 0.2);
-
-        a {
-            font-weight: 600;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    .cta {
-        text-align: center;
-        font-size: 1.2rem;
-        color: $secondary-color;
-        margin: $spacing-sm 0;
-        padding: $spacing-sm;
-        font-style: italic;
-        font-weight: 500;
-
-        a {
-            font-weight: 600;
-            text-decoration: underline;
-            color: $primary-color;
-
-            &:hover {
-                text-decoration: underline;
-                color: $secondary-color;
-            }
-        }
-
-        p {
-            font-size: inherit;
-            color: inherit;
-            font-style: inherit;
-            font-weight: inherit;
-        }
-    }
+// If there's no final paragraph, close the list
+.content-wrapper > h1#get-involved + p + ul:last-child {
+    border-bottom: 3px solid $primary-color;
+    border-radius: 0 0 $border-radius-md $border-radius-md;
 }
 
 @media (max-width: $breakpoint-mobile) {
     .page-content {
-        padding: 0 $spacing-sm $spacing-sm;
+        padding: $spacing-sm;
 
         h2 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         p {
@@ -303,39 +383,28 @@
         }
     }
 
-    .content-wrapper {
+    .page-content .content-wrapper {
         > h2 {
             padding: $spacing-sm;
-            margin: 0 (-$spacing-sm);
-            margin-top: $spacing-sm;
         }
 
-        > h2 + p,
-        > h2 + p + ul,
-        > h2 + p + ol {
+        > h2 + p {
             padding: 0 $spacing-sm;
         }
 
         > h2 + p + ul,
         > h2 + p + ol {
-            padding-bottom: $spacing-sm;
+            padding: 0 $spacing-sm $spacing-sm $spacing-sm;
+            padding-left: calc(#{$spacing-sm} + 1.5rem);
         }
-    }
-
-    .content-wrapper > h1#get-involved,
-    .page-content h1#get-involved {
-        padding: $spacing-md $spacing-sm;
-        font-size: 1.5rem;
-        margin: $spacing-lg (-$spacing-sm) 0;
     }
 
     .content-wrapper > h1#get-involved + p + ul li {
         display: block;
-        margin: $spacing-sm 0;
+        margin: $spacing-xs 0;
 
         a {
             display: block;
-            width: 100%;
             text-align: center;
         }
     }

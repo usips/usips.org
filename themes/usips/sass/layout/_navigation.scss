@@ -1,17 +1,22 @@
 @use "../variables" as *;
 
 #main-nav {
+    display: flex;
+    align-items: center;
+
     ul {
         list-style: none;
         height: 100%;
         display: flex;
-        align-items: stretch;
+        align-items: center;
         font-weight: 500;
     }
 
     li {
         position: relative;
         height: 100%;
+        display: flex;
+        align-items: center;
 
         &:hover {
             color: $text-hover-color;
@@ -23,6 +28,7 @@
         }
     }
 
+    // Make nav links more visible
     a {
         display: flex;
         align-items: center;
@@ -31,6 +37,8 @@
         min-height: 44px; // Touch target
         white-space: nowrap;
         text-align: right;
+        color: $text-black; // Darker for better contrast
+        font-weight: 600;
     }
 
     .submenu {

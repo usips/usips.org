@@ -39,20 +39,26 @@
 }
 
 // Sponsor button in navigation
-.nav-sponsor {
-    margin-left: $spacing-xs;
+#main-nav .nav-sponsor {
+    margin-left: $spacing-sm;
+    height: auto;
+    background: none;
+
+    &:hover {
+        background: none;
+    }
 
     .sponsor-link {
         display: flex;
         align-items: center;
-        gap: 0.4rem;
-        padding: 0.5rem 1rem;
-        min-height: 44px; // Touch target
-        background-color: transparent;
-        border: 1.5px solid $primary-color;
+        gap: 0.5rem;
+        padding: 0.6rem 1.2rem;
+        min-height: 44px;
+        background-color: $primary-color;
+        border: 2px solid $primary-color;
         border-radius: $border-radius-sm;
-        color: $primary-color;
-        font-weight: 500;
+        color: white;
+        font-weight: 600;
         text-decoration: none;
         transition: all 0.2s ease;
 
@@ -61,7 +67,8 @@
         }
 
         &:hover {
-            background-color: $primary-color;
+            background-color: darken($primary-color, 10%);
+            border-color: darken($primary-color, 10%);
             color: white;
             text-decoration: none;
         }
@@ -73,7 +80,9 @@
 }
 
 @media (max-width: $breakpoint-mobile) {
-    .nav-sponsor {
+    #main-nav .nav-sponsor {
+        margin-left: $spacing-xs;
+
         .sponsor-link {
             padding: 0.5rem 0.75rem;
 
