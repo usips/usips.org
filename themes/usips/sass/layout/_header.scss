@@ -159,13 +159,13 @@
         }
 
         .submenu {
-            position: static;
-            display: block;
-            box-shadow: none;
-            border: none;
-            border-top: none;
-            background: transparent;
-            min-width: 0;
+            position: static !important;
+            display: block !important;
+            box-shadow: none !important;
+            border: none !important;
+            border-top: none !important;
+            background: transparent !important;
+            min-width: 0 !important;
 
             ul {
                 padding: 0 0 $spacing-xs 0;
@@ -175,7 +175,7 @@
 
             li {
                 &:hover {
-                    background: none;
+                    background: none !important;
                 }
             }
 
