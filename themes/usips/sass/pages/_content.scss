@@ -1,27 +1,65 @@
 @use "../variables" as *;
 
-.page-content {
-    max-width: $content-max-width;
-    margin: 0 auto;
-    padding: $spacing-md $spacing-sm;
-
-    a {
-        color: $primary-color;
-    }
+// Page header banner
+.page-header {
+    background-color: $tertiary-color;
+    padding: $spacing-lg 0;
+    margin-bottom: $spacing-md;
 
     h1 {
         font-size: 2.5rem;
-        margin-bottom: $spacing-md;
         text-align: center;
         color: $text-black;
+        margin: 0;
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .page-header {
+        padding: $spacing-md 0;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+}
+
+// Main content area
+.page-content {
+    max-width: $content-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-sm $spacing-md;
+
+    a {
+        color: $primary-color;
+        padding: 2px 0; // Touch target improvement
+
+        &:focus-visible {
+            outline-offset: 3px;
+        }
+    }
+
+    // Remove old h1 styles since it's now in page-header
+    > h1 {
+        display: none;
     }
 
     h2 {
-        font-size: 1.8rem;
-        margin-top: $spacing-lg;
-        margin-bottom: 1.5rem;
-        border-bottom: 2px solid $primary-color;
-        padding-bottom: $spacing-xs;
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: $spacing-sm;
+        color: $primary-color;
+        border-bottom: none;
+        padding-bottom: 0;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     p {
@@ -39,11 +77,12 @@
     ol {
         list-style-type: none;
         padding-left: 1.5rem;
-        margin-bottom: $spacing-md;
+        margin-bottom: $spacing-sm;
 
         li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             position: relative;
+            padding: 2px 0; // Touch target improvement
 
             &:before {
                 content: "→";
@@ -70,12 +109,138 @@
         margin-bottom: $spacing-lg;
     }
 
+    // Horizontal rule before Get Involved
     hr {
         border: none;
-        border-top: 1px solid $tertiary-color;
-        margin: $spacing-lg 0 $spacing-md;
+        margin: $spacing-xl 0 0;
+    }
+}
+
+// Card-based layout for content sections (mission pillars)
+.content-wrapper {
+    // Style h2 sections as cards
+    > h2 {
+        background: white;
+        padding: $spacing-md;
+        padding-bottom: $spacing-xs;
+        margin: 0 (-$spacing-sm);
+        margin-top: $spacing-md;
+        border-radius: $border-radius-md $border-radius-md 0 0;
+        box-shadow: $shadow-card;
     }
 
+    // First h2 gets more top margin
+    > h2:first-child {
+        margin-top: 0;
+    }
+
+    // Paragraphs and lists following h2 continue the card
+    > h2 + p,
+    > h2 + p + ul,
+    > h2 + p + ol {
+        background: white;
+        padding: 0 $spacing-md;
+        margin: 0 (-$spacing-sm);
+        box-shadow: $shadow-card;
+    }
+
+    > h2 + p + ul,
+    > h2 + p + ol {
+        padding-bottom: $spacing-md;
+        border-radius: 0 0 $border-radius-md $border-radius-md;
+    }
+
+    // Alternating card backgrounds
+    > h2:nth-of-type(even),
+    > h2:nth-of-type(even) + p,
+    > h2:nth-of-type(even) + p + ul,
+    > h2:nth-of-type(even) + p + ol {
+        background: $tertiary-color;
+    }
+}
+
+// Get Involved section - prominent CTA
+.content-wrapper > h1#get-involved,
+.page-content h1#get-involved {
+    display: block !important;
+    background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 10%) 100%);
+    color: white;
+    padding: $spacing-lg $spacing-md;
+    margin: $spacing-xl (-$spacing-sm) 0;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: $border-radius-md $border-radius-md 0 0;
+}
+
+// Content following Get Involved
+.content-wrapper > h1#get-involved + p,
+.content-wrapper > h1#get-involved + p + ul {
+    background: rgba($primary-color, 0.05);
+    padding: $spacing-md;
+    margin: 0 (-$spacing-sm);
+    text-align: center;
+    border-left: 3px solid $primary-color;
+    border-right: 3px solid $primary-color;
+}
+
+.content-wrapper > h1#get-involved + p + ul {
+    padding-top: 0;
+    padding-bottom: $spacing-md;
+    border-bottom: 3px solid $primary-color;
+    border-radius: 0 0 $border-radius-md $border-radius-md;
+
+    li {
+        display: inline-block;
+        margin: $spacing-xs $spacing-sm;
+        padding: 0;
+
+        &:before {
+            display: none;
+        }
+
+        a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            min-height: 44px; // Touch target
+            background: white;
+            border: 2px solid $primary-color;
+            border-radius: $border-radius-sm;
+            color: $primary-color;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background: $primary-color;
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// Final paragraph after Get Involved list
+.content-wrapper > h1#get-involved + p + ul + p {
+    background: rgba($primary-color, 0.05);
+    padding: $spacing-sm $spacing-md $spacing-md;
+    margin: 0 (-$spacing-sm);
+    text-align: center;
+    font-style: italic;
+    color: $secondary-color;
+    border-left: 3px solid $primary-color;
+    border-right: 3px solid $primary-color;
+    border-bottom: 3px solid $primary-color;
+    border-radius: 0 0 $border-radius-md $border-radius-md;
+}
+
+// When there's a final paragraph, remove border-radius from list
+.content-wrapper > h1#get-involved + p + ul:has(+ p) {
+    border-bottom: none;
+    border-radius: 0;
+}
+
+// CTA styles (kept for compatibility)
+.page-content {
     p.cta {
         text-align: center;
         font-size: 1.2rem;
@@ -127,18 +292,51 @@
 
 @media (max-width: $breakpoint-mobile) {
     .page-content {
-        padding: $spacing-sm;
-
-        h1 {
-            font-size: 2rem;
-        }
+        padding: 0 $spacing-sm $spacing-sm;
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         p {
             font-size: 1rem;
+        }
+    }
+
+    .content-wrapper {
+        > h2 {
+            padding: $spacing-sm;
+            margin: 0 (-$spacing-sm);
+            margin-top: $spacing-sm;
+        }
+
+        > h2 + p,
+        > h2 + p + ul,
+        > h2 + p + ol {
+            padding: 0 $spacing-sm;
+        }
+
+        > h2 + p + ul,
+        > h2 + p + ol {
+            padding-bottom: $spacing-sm;
+        }
+    }
+
+    .content-wrapper > h1#get-involved,
+    .page-content h1#get-involved {
+        padding: $spacing-md $spacing-sm;
+        font-size: 1.5rem;
+        margin: $spacing-lg (-$spacing-sm) 0;
+    }
+
+    .content-wrapper > h1#get-involved + p + ul li {
+        display: block;
+        margin: $spacing-sm 0;
+
+        a {
+            display: block;
+            width: 100%;
+            text-align: center;
         }
     }
 }

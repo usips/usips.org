@@ -58,7 +58,7 @@ Our work depends on support from people like you. Here's how you can help:
 
 - [Join our mailing list](/us/subscribe/)
 - [Contribute to our projects](https://github.com/usips)
-- [Spread awareness about digital rights](https://x.com/usipsorg)
-- Support our advocacy efforts - Coming Soon!
+- [Spread the word](https://x.com/usipsorg)
+- [Become a sponsor](https://github.com/sponsors/usips)
 
 Together, we can build a digital future that respects human rights and promotes freedom.
