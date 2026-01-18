@@ -136,6 +136,15 @@
         display: none !important;
     }
 
+    // Mobile nav is controlled by _header.scss
+    #main-nav {
+        display: none;
+
+        &.mobile-open {
+            display: block;
+        }
+    }
+
     .main-nav {
         ul {
             gap: $spacing-sm;
