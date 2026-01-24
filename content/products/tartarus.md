@@ -5,7 +5,7 @@ date = 2025-02-07
 description = "A free, open-source shield protecting independent websites from attacks."
 +++
 
-The Internet has gone from tens of thousands of independent websites to a clearly stratified landscape. In our current environment, there is very little competition, and big businesses benefit monopolize the resources needed to handle large-scale attacks.
+The Internet has gone from tens of thousands of independent websites to a clearly stratified landscape. In our current environment, there is very little competition, and big businesses monopolize the resources needed to handle large-scale attacks.
 
 The "Upper Internet" consists of major platforms like Google, Facebook, and Amazon. These companies have billions of dollars to spend on infrastructure and security. When someone tries to attack them, it is simply the cost of doing business.
 
