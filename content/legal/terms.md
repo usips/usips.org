@@ -37,8 +37,8 @@ Please send DMCA notices by both certified mail and by email to the following ad
 
 <addr>
 United States Internet Preservation Society<br />
-1750 Pennsylvania Ave NW<br />
-Washington, DC 20038<br />
+PO Box 27009<br />
+Washington, DC 20006<br />
 Email: <a href="mailto:dmca@usips.org">dmca@usips.org</a>
 </addr>
 
@@ -102,8 +102,8 @@ ___
 
 <addr>
 United States Internet Preservation Society<br />
-1750 Pennsylvania Ave NW<br />
-Washington, DC 20038<br />
+PO Box 27009<br />
+Washington, DC 20006<br />
 Phone: (423) 973-9793<br />
 Email: <a href="mailto:legal@usips.org">legal@usips.org</a>
 </addr>

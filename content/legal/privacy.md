@@ -108,8 +108,8 @@ ___
 
 <addr>
 United States Internet Preservation Society<br />
-1750 Pennsylvania Ave NW<br />
-Washington, DC 20038<br />
+PO Box 27009<br />
+Washington, DC 20006<br />
 Phone: (423) 973-9793<br />
 <a href="mailto:privacy@usips.org">privacy@usips.org</a>
 </addr>
