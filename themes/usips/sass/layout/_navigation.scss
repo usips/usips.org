@@ -20,7 +20,7 @@
 
         &:hover {
             color: $text-hover-color;
-            background: $tertiary-color;
+            background: rgba($primary-color, 0.05);
 
             .submenu {
                 display: block;
@@ -68,7 +68,7 @@
             margin: 0;
 
             &:hover {
-                background: $tertiary-color;
+                background: rgba($primary-color, 0.05);
             }
         }
 

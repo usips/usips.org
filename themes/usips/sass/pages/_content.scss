@@ -8,6 +8,7 @@
 
     h1 {
         font-size: 2.5rem;
+        letter-spacing: -0.02em;
         text-align: center;
         color: $text-black;
         margin: 0;
@@ -53,13 +54,14 @@
     background: white;
     border-radius: $border-radius-md;
     box-shadow: $shadow-card;
+    border: 1px solid $border-color;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 
     &:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: $shadow-hover;
         transform: translateY(-2px);
     }
 
@@ -114,7 +116,7 @@
 
         .article-meta {
             font-size: 0.85rem;
-            color: #666;
+            color: $text-muted;
             margin-bottom: $spacing-sm;
 
             .author {
@@ -178,7 +180,7 @@
     }
 
     h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         margin: 0 0 $spacing-sm 0;
         color: $primary-color;
 
@@ -238,7 +240,7 @@
 .content-wrapper {
     // Intro paragraph (before first h2)
     > p:first-child {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
         margin-bottom: $spacing-lg;
         color: $text-color;
     }
@@ -249,7 +251,7 @@
     > h2 {
         margin: $spacing-lg 0 $spacing-sm 0;
         padding-top: $spacing-md;
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        border-top: 1px solid $border-color;
     }
 
     // First h2 doesn't need top border

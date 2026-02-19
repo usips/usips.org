@@ -124,7 +124,7 @@
 }
 
 .post-meta {
-    color: #666;
+    color: $text-muted;
     font-size: 0.9rem;
     margin-bottom: $spacing-sm;
     display: flex;
@@ -144,7 +144,7 @@
     }
 
     time {
-        color: #666;
+        color: $text-muted;
     }
 }
 
@@ -176,6 +176,7 @@
             margin-bottom: $spacing-sm;
             font-size: 2rem;
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
         .post-divider {
@@ -211,7 +212,7 @@
     .post-navigation {
         margin-top: $spacing-lg;
         padding-top: $spacing-md;
-        border-top: 1px solid #eee;
+        border-top: 1px solid $border-color;
         display: flex;
         justify-content: space-between;
 
@@ -325,7 +326,7 @@
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #e0e0e0;
+            border: 2px solid $border-color;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 

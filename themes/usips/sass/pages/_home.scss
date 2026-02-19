@@ -51,6 +51,7 @@
     .rest {
         font-family: $font-family-heading;
         font-size: 3.8rem;
+        letter-spacing: -0.02em;
         display: flex;
         flex-direction: column;
         gap: 0.1em;
@@ -60,7 +61,7 @@
 .hero-subtitle {
     font-size: 1.3rem;
     margin-bottom: $spacing-md;
-    opacity: 0.9;
+    opacity: 1;
     color: $text-color;
     text-align: left;
 }
@@ -79,6 +80,7 @@
         color: $primary-color;
         font-family: $font-family-heading;
         font-size: 3rem;
+        letter-spacing: -0.02em;
         margin-bottom: 1.5rem;
     }
 

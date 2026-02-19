@@ -15,7 +15,7 @@ footer.site-footer {
 }
 
 .footer-section h3 {
-    color: $text-color;
+    color: $primary-color;
     margin-bottom: $spacing-sm;
 }
 
@@ -31,7 +31,7 @@ footer.site-footer {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid $border-color;
     padding-top: $spacing-sm;
     text-align: center;
 

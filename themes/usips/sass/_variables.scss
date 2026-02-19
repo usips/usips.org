@@ -1,18 +1,21 @@
 // Colors
-$primary-color: #8B4513;
-$secondary-color: #4C4C4C;
-$tertiary-color: #FFF8DC;
-$text-black: #000000;
-$text-color: #4C4C4C;
-$text-hover-color: #8B4513;
-$background-color: #fffef8;
-$link-color: #8B4513;
+$primary-color: #5B3A29;
+$secondary-color: #3D3D3D;
+$tertiary-color: #F5F0E8;
+$text-black: #1A1A1A;
+$text-color: #3D3D3D;
+$text-hover-color: #7A4B2A;
+$background-color: #FAFAF7;
+$link-color: #5B3A29;
+$accent-color: #8C6D4F;
+$border-color: #E0DBD3;
+$text-muted: #6B6B6B;
 
 // Typography
 $font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $font-family-heading: 'Trust3A-XBold', sans-serif;
 $font-family-subheading: 'Trust1A-Bold', sans-serif;
-$line-height-base: 1.6;
+$line-height-base: 1.7;
 
 // Spacing
 $spacing-xs: 0.5rem;
@@ -29,8 +32,9 @@ $container-max-width: 1200px;
 $content-max-width: 800px;
 
 // Shadows
-$shadow-card: 0 2px 4px rgba(0, 0, 0, 0.1);
-$shadow-dropdown: 0 2px 5px rgba(0, 0, 0, 0.1);
+$shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+$shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+$shadow-dropdown: 0 4px 12px rgba(0, 0, 0, 0.08);
 
 // Border radius
 $border-radius-sm: 4px;

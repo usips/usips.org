@@ -23,7 +23,7 @@
         textarea {
             width: 100%;
             padding: 0.8rem;
-            border: 1px solid $tertiary-color;
+            border: 1px solid $border-color;
             border-radius: $border-radius-sm;
             font-size: 1rem;
             font-family: inherit;
@@ -31,7 +31,7 @@
             &:focus {
                 outline: none;
                 border-color: $primary-color;
-                box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+                box-shadow: 0 0 0 3px rgba($primary-color, 0.12);
             }
         }
 

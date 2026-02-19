@@ -19,6 +19,7 @@
     padding: $spacing-md;
     border-radius: $border-radius-md;
     box-shadow: $shadow-card;
+    border: 1px solid $border-color;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -67,6 +68,7 @@
     padding: $spacing-md;
     border-radius: $border-radius-md;
     box-shadow: $shadow-card;
+    border: 1px solid $border-color;
 
     h3 {
         margin-bottom: $spacing-xs;
@@ -83,7 +85,7 @@
 }
 
 .metadata {
-    color: #666;
+    color: $text-muted;
     font-size: 0.9rem;
     margin-bottom: $spacing-sm;
 }
