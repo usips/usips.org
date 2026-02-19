@@ -13,6 +13,6 @@ ISPs in the United States should be required to do business with all legitimate 
 
 Worse, large Internet Backbone companies will block services that are customers of their customers. So, despite not having a direct relationship with that company, they can and will enforce their arbitrary decisions downstream on legal American companies.
 
-Americans deserve high quality, unmetered, and unmitigated Internet connections. It is an essential part of daily life and should not be subject to the whims of a corporation.
+Americans deserve high quality, unmetered, and unthrottled Internet connections. It is an essential part of daily life and should not be subject to the whims of a corporation.
 
 

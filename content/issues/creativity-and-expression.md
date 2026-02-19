@@ -15,4 +15,4 @@ The process itself is sloppy. Anyone can file a DMCA claim against anything, wit
 
 To counter any DMCA claim, you are also legally required to provide your personal information to the claimant, including where you live. In many cases you are already dealing with a hostile party trying to censor you. On platforms like YouTube, the DMCA process is routinely abused to 'dox' anonymous creators.
 
-We need reform that balances everyone's interests. IP rules should encourage creativity, not punish it. Service providers should'’t be forced to play copyright cop. Creators deserve a fighting chance to defend their work without bankrupting themselves. Claims should come with real proof—like a registered copyright <em>before</em> anything gets yanked offline. The DMCA needs reform.
+We need reform that balances everyone's interests. IP rules should encourage creativity, not punish it. Service providers shouldn’t be forced to play copyright cop. Creators deserve a fighting chance to defend their work without bankrupting themselves. Claims should come with real proof—like a registered copyright *before* anything gets yanked offline. The DMCA needs reform.

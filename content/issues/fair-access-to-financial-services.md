@@ -7,9 +7,9 @@ description = "Everyone deserves to make money off their work."
 
 All Americans and all American businesses deserve equitable access to ordinary payment systems, with presumption of innocence, due process in disputes, and the right to appeal termination.
 
-Payment networks are the singlest largest bottlenecks in the financial system. They are the gatekeepers to the global economy, and they have the power to decide who gets to participate and who doesn't. This is a problem because payment networks are not neutral. They have their own interests, and they are not always aligned with the interests of the people who use them.
+Payment networks are the single largest bottleneck in the financial system. They are the gatekeepers to the global economy, and they have the power to decide who gets to participate and who doesn't. The problem is these networks aren't neutral—their interests don't always align with the people who depend on them.
 
-For decades, card networks and payment processors have stifled creativity, innovation, expression, and legitimate commerce by silently blocking businesses they don't like. They must be reigned in.
+For decades, card networks and payment processors have stifled creativity, innovation, expression, and legitimate commerce by silently blocking businesses they don't like. They must be reined in.
 
 
 ## Ubiquity
@@ -24,7 +24,7 @@ Payment networks manage secret blacklists, such as MATCH. You will not be inform
 
 Businesses interact with payment networks through payment gateways like Stripe, Square, and PayPal. These companies are the gatekeepers to the gatekeepers, and will hold you to terms of service for each and every card network they do business with, as well as their own. You are not at liberty to only do business with Visa or MasterCard, you must accept all their terms and the terms of all others. Not doing so means you are banned from the platform.
 
-If you support a creator on crowdfunding platforms like Patreon, your money must pass through the Patreon customer terms of service, the Patreon creator terms of service, the Stripe terms of service, and then also the terms of service for every card network. Any alleged violations can result in your transaction being blocked, or the creator being banned from Patreon, even if it is a completely legitimate purchase from a legal American business.
+If you support a creator on crowdfunding platforms like Patreon, your money must pass through the Patreon customer terms of service, the Patreon creator terms of service, the Stripe terms of service, and the terms of every card network. Any alleged violations can result in your transaction being blocked, or the creator being banned from Patreon, even if it is a completely legitimate purchase from a legal American business.
 
 ## Monopolistic
 
