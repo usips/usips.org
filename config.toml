@@ -31,6 +31,7 @@ menu = [
         "desktop",
         "footer",
     ], submenu = [
+        { url = "/us/advocacy", name = "Our Advocacy" },
         { url = "/us/board", name = "Board of Directors" },
         { url = "/us/contact", name = "Contact Us" },
         { url = "/us/subscribe", name = "Newsletter" },
