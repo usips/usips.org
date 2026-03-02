@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set filings = load_data(path="data/filings.toml") %}
+
+<div class="page-header">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+  </div>
+</div>
+<article class="page-content">
+  <div class="content-wrapper">
+    {{ page.content | safe }}
+
+    <div class="docket-list">
+      {% for entry in filings.filing %}
+      <article class="docket-entry">
+        <header class="docket-header">
+          <time>{{ entry.date }}</time>
+          <span class="docket-agency">{{ entry.agency }}</span>
+          <span class="docket-id">{{ entry.docket }} · {{ entry.rin }}</span>
+        </header>
+        <h3 class="docket-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+        <div class="docket-body">
+          <h4>Proposed Rule</h4>
+          <p>{{ entry.summary }}</p>
+          <hr>
+          <h4>Our Response</h4>
+          <p>{{ entry.response_summary }}</p>
+        </div>
+        <footer class="docket-footer">
+          <a href="{{ entry.response_pdf }}" class="docket-pdf">Comment Letter (PDF)</a>
+          {% if entry.author %}
+          {% set author = config.extra.authors[entry.author] %}
+          <div class="docket-author-bio">
+            {% if author.image %}
+            <img src="{{ get_url(path=author.image) }}" alt="{{ author.name }}" class="author-image">
+            {% endif %}
+            <div class="author-details">
+              <span class="author-name">{{ author.name }}</span>
+              {% if author.title %}
+              <span class="author-title">{{ author.title }}</span>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+        </footer>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</article>
+{% endblock content %}

@@ -234,6 +234,136 @@
         border: none;
         margin: $spacing-lg 0;
     }
+
+    // Docket entries (advocacy filings)
+    .docket-list {
+        margin: $spacing-md 0;
+    }
+
+    .docket-entry {
+        border: 1px solid $border-color;
+        border-radius: $border-radius-md;
+        margin-bottom: $spacing-md;
+        overflow: hidden;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .docket-header {
+        background: $tertiary-color;
+        padding: 0.75rem 1.25rem;
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.25rem 1rem;
+
+        time {
+            font-weight: 600;
+            color: $text-black;
+            font-size: 0.9rem;
+        }
+
+        .docket-agency {
+            color: $text-color;
+            font-size: 0.9rem;
+        }
+
+        .docket-id {
+            color: $text-muted;
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+    }
+
+    .docket-title {
+        font-size: 1.15rem !important;
+        line-height: 1.4;
+        margin: 0 !important;
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid $border-color;
+        color: $text-black !important;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .docket-body {
+        padding: 1rem 1.25rem;
+
+        h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: $text-muted;
+            margin: 0 0 0.35rem 0;
+        }
+
+        p {
+            font-size: 0.95rem !important;
+            margin: 0 !important;
+            color: $text-color;
+            line-height: 1.6;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid $border-color;
+            margin: 0.75rem 0;
+        }
+    }
+
+    .docket-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        border-top: 1px solid $border-color;
+        background: $tertiary-color;
+
+        .docket-pdf {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .docket-author-bio {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+
+            .author-image {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid $border-color;
+            }
+
+            .author-details {
+                .author-name {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    color: $text-color;
+                }
+
+                .author-title {
+                    display: block;
+                    font-size: 0.8rem;
+                    color: $text-muted;
+                    line-height: 1.3;
+                }
+            }
+        }
+    }
 }
 
 // Content wrapper - contains the main body content
