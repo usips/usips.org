@@ -1,4 +1,16 @@
 [[filing]]
+date = "March 20, 2026"
+agency = "U.S. Copyright Office, Library of Congress"
+docket = "Docket No. 2026-2"
+rin = "91 FR 13529"
+title = "Copyright Office Fees"
+url = "https://www.federalregister.gov/d/2026-04609"
+summary = "Proposed fee adjustments to address the Copyright Office's decline from 60% to 41% cost recovery, including elimination of the Single Application and increases across registration, recordation, and special services."
+response_summary = "USIPS supports the fee increases and argues they may not go far enough. We urge fees closer to the 60% historical benchmark, flag that IT infrastructure costs will outpace the Office's conservative 3% inflation projection due to AI-driven hardware demand, and recommend a more aggressive cross-subsidy model charging corporate users more to keep individual creator fees low."
+response_pdf = "/doc/2026/03/USIPS_Comment_91-FR-13529.pdf"
+author = "JM"
+
+[[filing]]
 date = "February 26, 2026"
 agency = "Board of Governors of the Federal Reserve System"
 docket = "Docket No. R-1884"
