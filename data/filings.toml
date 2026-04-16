@@ -8,6 +8,19 @@
 # Date must be ISO (YYYY-MM-DD) for the PDF path and display formatter.
 
 [[filing]]
+id = "HR-8250"
+type = "congressional_letter"
+date = "2026-04-16"
+agency = "U.S. House of Representatives, Committee on Energy and Commerce"
+bill = "H.R. 8250"
+congress = 119
+title = "Opposition to H.R. 8250 (\"Parents Decide Act\")"
+summary = "H.R. 8250 would force operating system providers to collect every user's date of birth and expose it to any application on the device through a mandatory programmatic interface. The mandate applies to all users, not only minors, and reaches every general-purpose computing device including phones, tablets, consoles, smart TVs, e-readers, and embedded devices."
+response_summary = "USIPS opposes H.R. 8250 and, as a matter of principle, all legislation imposing age verification on operating systems, devices, app stores, or platforms. The bill industrializes online surveillance by handing date-of-birth — the single most useful re-identification field — to every app, with no carve-out for adults, open-source maintainers, or hobbyists. We urge committee members to reject the bill and decline to co-sponsor any successor legislation following the same architecture."
+response_file = "USIPS_Letter_HR-8250.pdf"
+author = "JM"
+
+[[filing]]
 id = "91-FR-13529"
 type = "federal_register"
 date = "2026-03-20"
