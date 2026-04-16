@@ -1,23 +1,35 @@
+# Each [[filing]] becomes a docket card on /us/advocacy/.
+# Embed an individual filing in any markdown page with:
+#   {{/* filing(id="91-FR-13529") */}}
+#
+# Auto-derived fields (override available for each):
+#   external link  url <- document_id <- citation
+#   pdf link       response_pdf <- /doc/YYYY/MM/<response_file>
+# Date must be ISO (YYYY-MM-DD) for the PDF path and display formatter.
+
 [[filing]]
-date = "March 20, 2026"
+id = "91-FR-13529"
+type = "federal_register"
+date = "2026-03-20"
 agency = "U.S. Copyright Office, Library of Congress"
 docket = "Docket No. 2026-2"
-rin = "91 FR 13529"
+citation = "91 FR 13529"
 title = "Copyright Office Fees"
-url = "https://www.federalregister.gov/d/2026-04609"
 summary = "Proposed fee adjustments to address the Copyright Office's decline from 60% to 41% cost recovery, including elimination of the Single Application and increases across registration, recordation, and special services."
 response_summary = "USIPS supports the fee increases and argues they may not go far enough. We urge fees closer to the 60% historical benchmark, flag that IT infrastructure costs will outpace the Office's conservative 3% inflation projection due to AI-driven hardware demand, and recommend a more aggressive cross-subsidy model charging corporate users more to keep individual creator fees low."
-response_pdf = "/doc/2026/03/USIPS_Comment_91-FR-13529.pdf"
+response_file = "USIPS_Comment_91-FR-13529.pdf"
 author = "JM"
 
 [[filing]]
-date = "February 26, 2026"
+id = "RIN-7100-AH17"
+type = "federal_register"
+date = "2026-02-26"
 agency = "Board of Governors of the Federal Reserve System"
 docket = "Docket No. R-1884"
 rin = "RIN 7100-AH17"
+document_id = "2026-03818"
 title = "Prohibition on Use of Reputation Risk or Other Supervisory Tools To Encourage or Compel Banking Organizations To Engage in Politicized or Unlawful Discrimination"
-url = "https://www.federalregister.gov/documents/2026/02/26/2026-03818/prohibition-on-use-of-reputation-risk-or-other-supervisory-tools-to-encourage-or-compel-banking"
 summary = "Proposed rule to remove \"reputation risk\" from the Board's supervisory framework, acknowledging it has been used to pressure banks into denying services to lawful businesses."
 response_summary = "USIPS supports the objective but argues the rule is insufficient: it only constrains the Board, not banks themselves. We propose affirmative fair access requirements, mandatory documentation for service denials, and a right of notice and appeal for affected businesses."
-response_pdf = "/doc/2026/02/USIPS_Comment_RIN_7100-AH17.pdf"
+response_file = "USIPS_Comment_RIN_7100-AH17.pdf"
 author = "JM"

@@ -234,21 +234,25 @@
         border: none;
         margin: $spacing-lg 0;
     }
+}
 
-    // Docket entries (advocacy filings)
-    .docket-list {
-        margin: $spacing-md 0;
-    }
+// Docket entries (advocacy filings) — usable on any page.
+// All sub-selectors are nested under .docket-entry so they beat
+// the equal-specificity .blog-post .post-content h4/p rules
+// (this file loads after _blog.scss, so the cascade favors us).
+.docket-list {
+    margin: $spacing-md 0;
+}
 
-    .docket-entry {
-        border: 1px solid $border-color;
-        border-radius: $border-radius-md;
-        margin-bottom: $spacing-md;
-        overflow: hidden;
+.docket-entry {
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-md;
+    overflow: hidden;
+    background: white;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+    &:last-child {
+        margin-bottom: 0;
     }
 
     .docket-header {
@@ -279,14 +283,16 @@
     }
 
     .docket-title {
-        font-size: 1.15rem !important;
+        font-size: 1.15rem;
+        font-weight: 700;
         line-height: 1.4;
-        margin: 0 !important;
+        margin: 0;
         padding: 1rem 1.25rem;
         border-bottom: 1px solid $border-color;
-        color: $text-black !important;
+        color: $text-black;
 
         a {
+            color: inherit;
             text-decoration: none;
 
             &:hover {
@@ -307,8 +313,8 @@
         }
 
         p {
-            font-size: 0.95rem !important;
-            margin: 0 !important;
+            font-size: 0.95rem;
+            margin: 0;
             color: $text-color;
             line-height: 1.6;
         }
@@ -333,6 +339,7 @@
         .docket-pdf {
             font-weight: 600;
             font-size: 0.9rem;
+            color: $primary-color;
         }
 
         .docket-author-bio {

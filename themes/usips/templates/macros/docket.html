@@ -1,0 +1,88 @@
+{# Render a single advocacy filing as a docket card.
+   Expects `filing` to be a TOML table from data/filings.toml.
+
+   URL derivation priority:  url > document_id > citation > bill
+   PDF derivation priority:  response_pdf > /doc/YYYY/MM/<response_file>
+
+   Type-aware labels:
+     federal_register      → "Proposed Rule"      / "Comment Letter (PDF)"
+     congressional_letter  → "Legislation"        / "Letter to Congress (PDF)"
+#}
+{% macro entry(filing) %}
+{% set ext_url = "" %}
+{% if filing.url %}
+  {% set_global ext_url = filing.url %}
+{% elif filing.document_id %}
+  {% set_global ext_url = "https://www.federalregister.gov/d/" ~ filing.document_id %}
+{% elif filing.citation %}
+  {% set citation_slug = filing.citation | replace(from=" ", to="-") %}
+  {% set_global ext_url = "https://www.federalregister.gov/citation/" ~ citation_slug %}
+{% elif filing.bill %}
+  {% set bill_lower = filing.bill | lower | replace(from=".", to="") %}
+  {% set bill_path = "" %}
+  {% if bill_lower is starting_with("hr ") %}
+    {% set_global bill_path = bill_lower | replace(from="hr ", to="house-bill/") %}
+  {% elif bill_lower is starting_with("s ") %}
+    {% set_global bill_path = bill_lower | replace(from="s ", to="senate-bill/") %}
+  {% endif %}
+  {% if bill_path %}
+    {% set congress_num = filing.congress | default(value=119) %}
+    {% set_global ext_url = "https://www.congress.gov/bill/" ~ congress_num ~ "th-congress/" ~ bill_path %}
+  {% endif %}
+{% endif %}
+
+{% set pdf_path = "" %}
+{% if filing.response_pdf %}
+  {% set_global pdf_path = filing.response_pdf %}
+{% elif filing.response_file %}
+  {% set year = filing.date | date(format="%Y") %}
+  {% set month = filing.date | date(format="%m") %}
+  {% set_global pdf_path = "/doc/" ~ year ~ "/" ~ month ~ "/" ~ filing.response_file %}
+{% endif %}
+
+<article class="docket-entry">
+  <header class="docket-header">
+    <time datetime="{{ filing.date }}">{{ filing.date | date(format="%B %-d, %Y") }}</time>
+    {% if filing.agency %}<span class="docket-agency">{{ filing.agency }}</span>{% endif %}
+    {% if filing.bill or filing.docket or filing.rin or filing.citation %}
+    <span class="docket-id">
+      {%- if filing.bill %}{{ filing.bill }}{% endif -%}
+      {%- if filing.docket %}{% if filing.bill %} · {% endif %}{{ filing.docket }}{% endif -%}
+      {%- if filing.rin %}{% if filing.bill or filing.docket %} · {% endif %}{{ filing.rin }}{% endif -%}
+      {%- if filing.citation %}{% if filing.bill or filing.docket or filing.rin %} · {% endif %}{{ filing.citation }}{% endif -%}
+    </span>
+    {% endif %}
+  </header>
+  <div class="docket-title">
+    {% if ext_url %}<a href="{{ ext_url }}">{{ filing.title }}</a>{% else %}{{ filing.title }}{% endif %}
+  </div>
+  <div class="docket-body">
+    {% if filing.summary %}
+    <h4>{% if filing.type == "congressional_letter" %}Legislation{% else %}Proposed Rule{% endif %}</h4>
+    <p>{{ filing.summary }}</p>
+    {% endif %}
+    {% if filing.summary and filing.response_summary %}<hr>{% endif %}
+    {% if filing.response_summary %}
+    <h4>Our Response</h4>
+    <p>{{ filing.response_summary }}</p>
+    {% endif %}
+  </div>
+  <footer class="docket-footer">
+    {% if pdf_path %}
+    <a href="{{ pdf_path }}" class="docket-pdf">{% if filing.type == "congressional_letter" %}Letter to Congress (PDF){% else %}Comment Letter (PDF){% endif %}</a>
+    {% endif %}
+    {% if filing.author %}
+    {% set author = config.extra.authors[filing.author] %}
+    <div class="docket-author-bio">
+      {% if author.image %}
+      <img src="{{ get_url(path=author.image) }}" alt="{{ author.name }}" class="author-image">
+      {% endif %}
+      <div class="author-details">
+        <span class="author-name">{{ author.name }}</span>
+        {% if author.title %}<span class="author-title">{{ author.title }}</span>{% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </footer>
+</article>
+{% endmacro entry %}

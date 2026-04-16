@@ -1,0 +1,16 @@
+{# Embed a single filing card in any markdown page.
+   Usage in markdown:  {{/* filing(id="91-FR-13529") */}}
+#}
+{% import "macros/docket.html" as docket %}
+{% set filings = load_data(path="data/filings.toml") %}
+{% set match = false %}
+{% for f in filings.filing %}
+  {% if f.id == id %}
+    {% set_global match = f %}
+  {% endif %}
+{% endfor %}
+{% if match %}
+<div class="docket-list">{{ docket::entry(filing=match) }}</div>
+{% else %}
+<p><em>Filing not found: <code>{{ id }}</code></em></p>
+{% endif %}
