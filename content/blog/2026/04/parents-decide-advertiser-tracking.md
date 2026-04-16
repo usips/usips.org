@@ -111,3 +111,7 @@ This bill is new and has not passed. Most bills like this never do. However, the
 Please write your House representative and tell them you do not want H.R. 8250. You can [find your representative here](https://www.house.gov/representatives/find-your-representative).
 
 Tell them what the bill really does. Tell them you do not want your birthday handed out to every app. Tell them Congress should try again.
+
+USIPS has formally opposed H.R. 8250 in writing to the House Committee on Energy and Commerce.
+
+{{ filing(id="HR-8250") }}
