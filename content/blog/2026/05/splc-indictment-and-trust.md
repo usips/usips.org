@@ -4,6 +4,7 @@ date = 2026-05-02
 description = "The SPLC was indicted for bank fraud. The mechanics are boring. The implications for who controls financial infrastructure in this country are not."
 [extra]
 author = "KC"
+blog_image = "image/blog/2026/05/splc-indictment-and-trust.webp"
 +++
 
 How do you trust an institution after you watch it run a covert banking operation for thirty years?
