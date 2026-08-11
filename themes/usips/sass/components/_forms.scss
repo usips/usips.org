@@ -1,38 +1,36 @@
 @use "../variables" as *;
 
+// USWDS form language: 1px solid dark border (3:1 minimum against the
+// surface), minimal radius, focus = the global high-contrast ring.
 .contact-form {
     max-width: 600px;
-    margin: $spacing-md auto;
-    padding: $spacing-md;
-    background: white;
-    border-radius: $border-radius-md;
-    box-shadow: $shadow-card;
+    margin: $unit-4 auto;
+    padding: $unit-4;
+    background: $color-white;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
 
     .form-group {
-        margin-bottom: 1.5rem;
+        margin-bottom: $unit-3;
 
         label {
             display: block;
-            margin-bottom: $spacing-xs;
-            color: $secondary-color;
-            font-weight: 500;
+            margin-bottom: $unit-1;
+            color: $text-black;
+            font-weight: $fw-medium;
         }
 
         input,
         select,
         textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid $border-color;
-            border-radius: $border-radius-sm;
-            font-size: 1rem;
+            padding: $unit-105;
+            border: 1px solid $input-border-color;
+            border-radius: $radius-sm;
+            font-size: $text-md;
             font-family: inherit;
-
-            &:focus {
-                outline: none;
-                border-color: $primary-color;
-                box-shadow: 0 0 0 3px rgba($primary-color, 0.12);
-            }
+            background: $color-white;
+            color: $text-black;
         }
 
         textarea {
@@ -43,48 +41,52 @@
 
     button {
         width: 100%;
-        padding: $spacing-sm;
-        background-color: $primary-color;
-        color: white;
+        padding: $unit-2;
+        background-color: $color-primary;
+        color: $color-white;
         border: none;
-        border-radius: $border-radius-sm;
-        font-size: 1.1rem;
-        font-weight: 500;
+        border-radius: $radius-md;
+        font-size: $text-lg;
+        font-weight: $fw-semibold;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: background-color $transition;
 
         &:hover {
-            background-color: darken($primary-color, 10%);
-            color: white;
+            background-color: $color-primary-dark;
+            color: $color-white;
+        }
+
+        &:active {
+            background-color: $color-primary-darker;
         }
     }
 
     .form-result {
-        margin-top: $spacing-sm;
-        padding: $spacing-sm;
-        border-radius: $border-radius-sm;
+        margin-top: $unit-2;
+        padding: $unit-2;
+        border-radius: $radius-md;
         text-align: center;
-        font-weight: 500;
+        font-weight: $fw-medium;
 
         &:empty {
             display: none;
         }
 
         &.success {
-            background-color: #e8f5e9;
-            color: #2e7d32;
+            background-color: $color-success-lighter;
+            color: $color-success-dark;
         }
 
         &.error {
-            background-color: #ffebee;
-            color: #c62828;
+            background-color: $color-error-lighter;
+            color: $color-error-dark;
         }
     }
 }
 
 @media (max-width: $breakpoint-mobile) {
     .contact-form {
-        padding: 1.5rem;
-        margin: 1.5rem auto;
+        padding: $unit-3;
+        margin: $unit-3 auto;
     }
 }

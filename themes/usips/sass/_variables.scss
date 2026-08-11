@@ -1,41 +1,180 @@
-// Colors
-$primary-color: #5B3A29;
-$secondary-color: #3D3D3D;
-$tertiary-color: #F5F0E8;
-$text-black: #1A1A1A;
-$text-color: #3D3D3D;
-$text-hover-color: #7A4B2A;
-$background-color: #FAFAF7;
-$link-color: #5B3A29;
-$accent-color: #8C6D4F;
+// ==========================================================================
+// USIPS design tokens
+// Token structure follows the U.S. Web Design System (USWDS) theme model:
+// semantic color roles, an 8px spacing grid, the USWDS type scale, modest
+// radii, and restrained shadows. Hues are the USIPS "parchment & heritage"
+// palette. Every text/background pair used by the theme meets WCAG 2.1 AA
+// (body 4.5:1, large text and non-text UI 3:1).
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+// Color primitives
+// --------------------------------------------------------------------------
+
+// Ink — warm near-black (USWDS gray-90 analog)
+$color-ink: #1B1B1B;
+$color-white: #FFFFFF;
+
+// Paper & parchment surfaces
+$color-paper: #FAFAF7; // default page background
+$color-parchment: #F5F0E8; // alt section background (USWDS bg-alt analog)
+$color-parchment-dark: #EAE2D3; // banner strip, header bands, stripes
+
+// Heritage brown — primary family
+$color-primary-lighter: #F1E8DA; // tint backgrounds only
+$color-primary-light: #8C6D4F; // large text / decorative only (4.5:1 on paper)
+$color-primary: #5B3A29; // 9.6:1 on paper
+$color-primary-dark: #47281B; // hover state — 12.6:1 on paper
+$color-primary-darker: #2C1D12; // dark chrome: footer band, banner text on light
+
+// Seal red — secondary family (emphasis, destructive)
+$color-secondary-lighter: #F6E7E1;
+$color-secondary: #8F2A10; // 8.0:1 on paper
+$color-secondary-dark: #6E2410;
+
+// Heritage gold — accent-warm family
+$color-gold-lighter: #F5E6C8; // light tint backgrounds (USWDS gold-5)
+$color-gold: #C9A227; // dark-chrome accents only (6.7:1 on primary-darker)
+$color-gold-light: #D9B85C; // dark-chrome links/rules (8.5:1 on primary-darker)
+
+// Status (USWDS semantic mapping; dark variants are the AA text colors)
+$color-success-lighter: #ECF3EC;
+$color-success-dark: #446443;
+$color-warning-lighter: #FAF3D1;
+$color-warning: #FFBE2E;
+$color-error-lighter: #F8E1DE;
+$color-error-dark: #B50909;
+$color-info-lighter: #E7F6F8;
+$color-info-dark: #0E6B87;
+
+// --------------------------------------------------------------------------
+// Semantic roles
+// --------------------------------------------------------------------------
+
+$text-black: $color-ink;
+$text-color: $color-ink;
+$text-muted: #5F574E; // 6.8:1 on paper
+$text-inverse: $color-parchment; // on dark chrome — 14.3:1
+$text-inverse-muted: #D8CDBB; // on dark chrome — 10.4:1
+
+$background-color: $color-paper;
+$background-alt: $color-parchment;
+$background-dark: $color-primary-darker;
+
+$link-color: $color-primary;
+$link-hover-color: $color-primary-dark;
+$link-visited-color: #66374A; // heritage wine — 9.1:1 on paper
+$text-hover-color: $color-primary-dark;
+
 $border-color: #E0DBD3;
-$text-muted: #6B6B6B;
+$border-strong: #B4A48E;
+$input-border-color: #6B5D4F; // 6.1:1 on paper (3:1 non-text minimum)
 
+// Focus ring — USWDS blue-50; 3:1+ against every light surface in the theme.
+// Deliberately blue on a brown site: unmissable, per USWDS accessibility rules.
+$focus-ring-color: #2378C3;
+$focus-ring-width: 0.25rem;
+
+// --------------------------------------------------------------------------
 // Typography
-$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-$font-family-heading: 'Trust3A-XBold', sans-serif;
-$font-family-subheading: 'Trust1A-Bold', sans-serif;
-$line-height-base: 1.7;
+// --------------------------------------------------------------------------
 
-// Spacing
-$spacing-xs: 0.5rem;
-$spacing-sm: 1rem;
-$spacing-md: 2rem;
-$spacing-lg: 3rem;
-$spacing-xl: 4rem;
+// Public Sans — USWDS default sans; body and UI text
+$font-sans: "Public Sans Web", "Public Sans", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+// Merriweather — USWDS serif; headings and long-form reading
+$font-serif: "Merriweather Web", Georgia, Cambria, "Times New Roman", serif;
+// Roboto Mono — USWDS mono; docket numbers, code
+$font-mono: "Roboto Mono Web", ui-monospace, Consolas, "Courier New", monospace;
+// Trust — USIPS brand display faces (wordmark, hero) — heritage identity
+$font-display: "Trust3A-XBold", Georgia, serif;
+$font-subdisplay: "Trust1A-Bold", Georgia, serif;
 
-// Breakpoints
+// Legacy aliases
+$font-family-base: $font-sans;
+$font-family-heading: $font-display;
+$font-family-subheading: $font-subdisplay;
+
+// USWDS type scale (px equivalents in comments)
+$text-xs: 0.8125rem; // 13
+$text-sm: 0.875rem; // 14
+$text-md: 1rem; // 16 — default body
+$text-lg: 1.0625rem; // 17 — long-form body
+$text-xl: 1.25rem; // 20
+$text-2xl: 1.375rem; // 22 — h4
+$text-3xl: 1.5rem; // 24 — h3
+$text-4xl: 2rem; // 32 — h2
+$text-5xl: 2.5rem; // 40 — h1
+$text-6xl: 3.5rem; // 56 — display
+
+$lh-tight: 1.15;
+$lh-heading: 1.35;
+$lh-body: 1.5;
+$lh-relaxed: 1.62;
+$line-height-base: $lh-relaxed;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// Readable prose cap (USWDS measure-4)
+$measure: 68ch;
+
+// --------------------------------------------------------------------------
+// Spacing — 8px grid (USWDS units)
+// --------------------------------------------------------------------------
+
+$unit-05: 0.25rem; // 4
+$unit-1: 0.5rem; // 8
+$unit-105: 0.75rem; // 12
+$unit-2: 1rem; // 16
+$unit-3: 1.5rem; // 24
+$unit-4: 2rem; // 32
+$unit-5: 2.5rem; // 40
+$unit-6: 3rem; // 48
+$unit-8: 4rem; // 64
+$unit-10: 5rem; // 80
+$unit-15: 7.5rem; // 120
+
+// Legacy aliases (already 8px-grid multiples)
+$spacing-xs: $unit-1;
+$spacing-sm: $unit-2;
+$spacing-md: $unit-4;
+$spacing-lg: $unit-6;
+$spacing-xl: $unit-8;
+
+// --------------------------------------------------------------------------
+// Breakpoints & layout
+// --------------------------------------------------------------------------
+
 $breakpoint-mobile: 768px;
 
-// Layout
-$container-max-width: 1200px;
+// USWDS desktop container — narrower than marketing sites, favors reading
+$container-max-width: 64rem; // 1024
 $content-max-width: 800px;
 
-// Shadows
-$shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
-$shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
-$shadow-dropdown: 0 4px 12px rgba(0, 0, 0, 0.08);
+// --------------------------------------------------------------------------
+// Elevation, radii, motion
+// --------------------------------------------------------------------------
 
-// Border radius
-$border-radius-sm: 4px;
-$border-radius-md: 8px;
+// USWDS shadow scale — borders do the structural work, shadows are sparse
+$shadow-1: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+$shadow-2: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+$shadow-3: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+
+// Legacy aliases
+$shadow-card: $shadow-1;
+$shadow-hover: $shadow-2;
+$shadow-dropdown: $shadow-2;
+
+// Modest USWDS radii — sharper edges read formal
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 8px;
+
+// Legacy aliases (both flatten to the USWDS default 4px)
+$border-radius-sm: $radius-md;
+$border-radius-md: $radius-md;
+
+// Short, linear transitions only (USWDS motion rules)
+$transition: 0.15s ease-in-out;

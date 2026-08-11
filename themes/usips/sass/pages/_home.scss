@@ -1,10 +1,12 @@
 @use "../variables" as *;
 
+// Hero — parchment band, Trust brand display type, flat surfaces
 .hero {
-    background-color: $tertiary-color;
+    background-color: $color-parchment;
+    border-bottom: 1px solid $border-color;
     color: $text-color;
-    padding: $spacing-xl 0;
-    margin-bottom: $spacing-xl;
+    padding: $unit-8 0;
+    margin-bottom: $unit-8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,8 +17,8 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: $spacing-xl;
-    padding: 0 $spacing-md;
+    gap: $unit-8;
+    padding: 0 $unit-4;
 }
 
 .hero-logo {
@@ -38,18 +40,18 @@
 .hero h1 {
     color: $text-black;
     line-height: 1;
-    margin-bottom: $spacing-sm;
+    margin-bottom: $unit-2;
     text-align: left;
 
     .us {
-        font-family: $font-family-subheading;
+        font-family: $font-subdisplay;
         font-size: 2.5rem;
         display: block;
-        margin-bottom: $spacing-xs;
+        margin-bottom: $unit-1;
     }
 
     .rest {
-        font-family: $font-family-heading;
+        font-family: $font-display;
         font-size: 3.8rem;
         letter-spacing: -0.02em;
         display: flex;
@@ -59,62 +61,80 @@
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: $spacing-md;
-    opacity: 1;
+    font-family: $font-serif;
+    font-size: $text-xl;
+    margin-bottom: $unit-4;
     color: $text-color;
     text-align: left;
 }
 
 .hero-cta {
     display: flex;
-    gap: $spacing-sm;
+    gap: $unit-2;
     justify-content: flex-start;
 }
 
 .featured-issues {
     text-align: center;
-    padding: $spacing-md 0 $spacing-xl;
+    padding: $unit-4 0 $unit-8;
 
     .section-title {
-        color: $primary-color;
-        font-family: $font-family-heading;
+        color: $color-primary;
+        font-family: $font-display;
         font-size: 3rem;
         letter-spacing: -0.02em;
-        margin-bottom: 1.5rem;
+        margin-bottom: $unit-3;
     }
 
     p {
-        font-size: 1.4rem;
+        font-size: $text-xl;
         color: $text-color;
         max-width: 600px;
         margin: 0 auto;
-        line-height: $line-height-base;
+        line-height: $lh-relaxed;
 
         a {
-            color: $primary-color;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
+            color: $color-primary;
+            font-weight: $fw-medium;
 
             &:hover {
-                color: $text-hover-color;
-                text-decoration: underline;
+                color: $link-hover-color;
             }
         }
     }
 }
 
+.newsletter {
+    text-align: center;
+    padding: $unit-6 0 $unit-8;
+    background-color: $color-parchment;
+    border-top: 1px solid $border-color;
+
+    .section-title {
+        margin-bottom: $unit-2;
+    }
+
+    p {
+        max-width: 600px;
+        margin: 0 auto $unit-3;
+    }
+
+    #hubspot-form {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: $breakpoint-mobile) {
     .hero {
-        padding: $spacing-lg 0;
+        padding: $unit-6 0;
     }
 
     .hero-content {
         flex-direction: column;
         text-align: center;
-        padding: 0 $spacing-sm;
-        gap: $spacing-md;
+        padding: 0 $unit-2;
+        gap: $unit-4;
     }
 
     .hero-logo-img {
@@ -136,7 +156,7 @@
 
     .hero-subtitle {
         text-align: center;
-        font-size: 1.2rem;
+        font-size: $text-lg;
     }
 
     .hero-cta {

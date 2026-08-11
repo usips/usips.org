@@ -13,5 +13,12 @@ main {
 .container {
     max-width: $container-max-width;
     margin: 0 auto;
-    padding: 0 $spacing-sm;
+    padding: 0 $unit-2;
+}
+
+// Readable prose: cap the measure (USWDS measure-4)
+.page-content p,
+.post-content p,
+.content-wrapper p {
+    max-width: $measure;
 }

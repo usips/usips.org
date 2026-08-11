@@ -1,22 +1,33 @@
 @use "../variables" as *;
 
+// Main footer — parchment surface, structural 1px rules (USWDS-style)
 footer.site-footer {
-    background-color: $tertiary-color;
+    background-color: $color-parchment;
+    border-top: 1px solid $border-color;
     color: $text-color;
-    padding: $spacing-lg 0 $spacing-sm;
-    margin-top: $spacing-xl;
+    padding: $unit-6 0 $unit-2;
+    margin-top: $unit-8;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: $spacing-md;
-    margin-bottom: $spacing-md;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: $unit-4;
+    margin-bottom: $unit-4;
 }
 
-.footer-section h3 {
-    color: $primary-color;
-    margin-bottom: $spacing-sm;
+.footer-section {
+    h3 {
+        font-family: $font-serif;
+        font-size: $text-lg;
+        color: $color-primary;
+        margin-bottom: $unit-2;
+    }
+
+    p {
+        font-size: $text-sm;
+        line-height: $lh-relaxed;
+    }
 }
 
 .social-links {
@@ -26,19 +37,7 @@ footer.site-footer {
     padding: 0;
 
     li {
-        margin: 0;
-    }
-}
-
-.footer-bottom {
-    border-top: 1px solid $border-color;
-    padding-top: $spacing-sm;
-    text-align: center;
-
-    .build-info {
-        font-size: 0.8rem;
-        color: rgba(0, 0, 0, 0.5);
-        margin-top: $spacing-xs;
+        margin: 0 0 $unit-1;
     }
 }
 
@@ -49,26 +48,36 @@ footer.site-footer {
     padding: 0;
 
     li {
-        margin: 0;
+        margin: 0 0 $unit-1;
     }
 
-    .footer-link {
+    a {
         color: $text-color;
-        text-decoration: underline;
 
         &:hover {
-            color: $text-hover-color;
-            text-decoration: underline;
+            color: $link-hover-color;
         }
     }
 }
 
+// Legal band — dark heritage chrome (USWDS dark-footer analog)
 footer.legal-footer {
-    color: $text-color;
-    background-color: darken($tertiary-color, 10%);
+    color: $text-inverse-muted;
+    background-color: $background-dark;
+    font-size: $text-sm;
 
     .container {
-        padding: 1em 0;
+        padding: $unit-3 $unit-2;
         text-align: center;
+    }
+
+    a {
+        color: $color-gold-light;
+    }
+
+    .build-info {
+        margin-top: $unit-1;
+        font-family: $font-mono;
+        font-size: $text-xs;
     }
 }

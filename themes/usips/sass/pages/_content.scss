@@ -1,14 +1,15 @@
 @use "../variables" as *;
 
-// Page header banner
+// Page header banner — parchment band, serif title
 .page-header {
-    background-color: $tertiary-color;
-    padding: $spacing-lg 0;
+    background-color: $color-parchment;
+    border-bottom: 1px solid $border-color;
+    padding: $unit-6 0;
     margin-bottom: 0;
 
     h1 {
-        font-size: 2.5rem;
-        letter-spacing: -0.02em;
+        font-size: $text-5xl;
+        letter-spacing: -0.01em;
         text-align: center;
         color: $text-black;
         margin: 0;
@@ -17,110 +18,110 @@
     .page-subtitle {
         text-align: center;
         color: $text-color;
-        font-size: 1.1rem;
-        margin: $spacing-sm 0 0 0;
+        font-size: $text-lg;
+        margin: $unit-2 auto 0;
         max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
 @media (max-width: $breakpoint-mobile) {
     .page-header {
-        padding: $spacing-md 0;
+        padding: $unit-4 0;
 
         h1 {
-            font-size: 2rem;
+            font-size: $text-4xl;
         }
 
         .page-subtitle {
-            font-size: 1rem;
+            font-size: $text-md;
         }
     }
 }
 
 // Article listing page (Issues, Blog)
 .listing-page {
-    padding: $spacing-lg 0;
+    padding: $unit-6 0;
 }
 
 .article-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: $spacing-md;
+    gap: $unit-4;
 }
 
+// USWDS card: 1px border does the structure; hover adds shadow-2 only —
+// no lift, no zoom.
 .article-card {
-    background: white;
-    border-radius: $border-radius-md;
-    box-shadow: $shadow-card;
+    background: $color-white;
+    border-radius: $radius-md;
     border: 1px solid $border-color;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: box-shadow $transition;
 
     &:hover {
-        box-shadow: $shadow-hover;
-        transform: translateY(-2px);
+        box-shadow: $shadow-2;
     }
 
     .article-image {
         display: block;
         overflow: hidden;
         aspect-ratio: 16/9;
+        border-bottom: 1px solid $border-color;
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
 
-            &[data-position="top"] { object-position: top; }
-            &[data-position="bottom"] { object-position: bottom; }
-        }
+            &[data-position="top"] {
+                object-position: top;
+            }
 
-        &:hover img {
-            transform: scale(1.05);
+            &[data-position="bottom"] {
+                object-position: bottom;
+            }
         }
     }
 
     .article-content {
-        padding: $spacing-md;
+        padding: $unit-4;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
 
         h2 {
-            font-size: 1.3rem;
-            margin: 0 0 $spacing-sm 0;
-            line-height: 1.3;
+            font-size: $text-xl;
+            margin: 0 0 $unit-2 0;
+            line-height: $lh-heading;
 
             a {
                 color: $text-black;
                 text-decoration: none;
 
                 &:hover {
-                    color: $primary-color;
+                    color: $color-primary;
+                    text-decoration: underline;
                 }
             }
         }
 
         .article-description {
             color: $text-color;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin: 0 0 $spacing-sm 0;
+            font-size: $text-sm;
+            line-height: $lh-body;
+            margin: 0 0 $unit-2 0;
             flex-grow: 1;
         }
 
         .article-meta {
-            font-size: 0.85rem;
+            font-size: $text-xs;
             color: $text-muted;
-            margin-bottom: $spacing-sm;
+            margin-bottom: $unit-2;
 
             .author {
-                font-weight: 500;
+                font-weight: $fw-medium;
             }
 
             .separator {
@@ -129,21 +130,16 @@
         }
 
         .read-more-link {
-            color: $primary-color;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.95rem;
-
-            &:hover {
-                text-decoration: underline;
-            }
+            color: $color-primary;
+            font-weight: $fw-semibold;
+            font-size: $text-sm;
         }
     }
 }
 
-// Cards without images get alternating backgrounds
+// Cards without images get alternating parchment backgrounds
 .article-card:not(:has(.article-image)):nth-child(even) {
-    background: $tertiary-color;
+    background: $color-parchment;
 }
 
 @media (max-width: $breakpoint-mobile) {
@@ -152,10 +148,10 @@
     }
 
     .article-card .article-content {
-        padding: $spacing-sm;
+        padding: $unit-2;
 
         h2 {
-            font-size: 1.2rem;
+            font-size: $text-lg;
         }
     }
 }
@@ -164,25 +160,21 @@
 .page-content {
     max-width: $content-max-width;
     margin: 0 auto;
-    padding: $spacing-md $spacing-sm;
+    padding: $unit-4 $unit-2;
 
-    a {
-        color: $primary-color;
-
-        &:focus-visible {
-            outline-offset: 3px;
-        }
+    a:focus-visible {
+        outline-offset: 3px;
     }
 
     // Hide duplicate h1 since it's in page-header
-    > h1:first-child {
+    >h1:first-child {
         display: none;
     }
 
     h2 {
-        font-size: 1.5rem;
-        margin: 0 0 $spacing-sm 0;
-        color: $primary-color;
+        font-size: $text-3xl;
+        margin: 0 0 $unit-2 0;
+        color: $color-primary;
 
         a {
             color: inherit;
@@ -195,44 +187,37 @@
     }
 
     p {
-        line-height: $line-height-base;
-        margin: 0 0 $spacing-sm 0;
-        font-size: 1.05rem;
+        line-height: $lh-relaxed;
+        margin: 0 0 $unit-2 0;
+        font-size: $text-lg;
         color: $text-color;
     }
 
-    ul, ol {
-        list-style-type: none;
-        padding-left: 1.5rem;
-        margin: 0 0 $spacing-sm 0;
+    // Standard list markers (USWDS: no glyph characters as icons),
+    // tinted in the heritage primary.
+    ul,
+    ol {
+        padding-left: $unit-4;
+        margin: 0 0 $unit-2 0;
 
         li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            line-height: 1.5;
+            margin-bottom: $unit-1;
+            line-height: $lh-body;
 
-            &:before {
-                content: "→";
-                position: absolute;
-                left: -1.5rem;
-                color: $primary-color;
+            &::marker {
+                color: $color-primary;
             }
         }
     }
 
-    ol {
-        counter-reset: item;
-
-        li:before {
-            content: counter(item) ".";
-            counter-increment: item;
-            font-weight: 500;
-        }
+    ol li::marker {
+        font-weight: $fw-medium;
     }
 
     hr {
         border: none;
-        margin: $spacing-lg 0;
+        border-top: 1px solid $border-color;
+        margin: $unit-6 0;
     }
 }
 
@@ -241,53 +226,55 @@
 // the equal-specificity .blog-post .post-content h4/p rules
 // (this file loads after _blog.scss, so the cascade favors us).
 .docket-list {
-    margin: $spacing-md 0;
+    margin: $unit-4 0;
 }
 
 .docket-entry {
     border: 1px solid $border-color;
-    border-radius: $border-radius-md;
-    margin-bottom: $spacing-md;
+    border-radius: $radius-md;
+    margin-bottom: $unit-4;
     overflow: hidden;
-    background: white;
+    background: $color-white;
+    font-family: $font-sans;
 
     &:last-child {
         margin-bottom: 0;
     }
 
     .docket-header {
-        background: $tertiary-color;
-        padding: 0.75rem 1.25rem;
+        background: $color-parchment;
+        padding: $unit-105 $unit-3;
         border-bottom: 1px solid $border-color;
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
-        gap: 0.25rem 1rem;
+        gap: $unit-05 $unit-2;
 
         time {
-            font-weight: 600;
+            font-weight: $fw-semibold;
             color: $text-black;
-            font-size: 0.9rem;
+            font-size: $text-sm;
         }
 
         .docket-agency {
             color: $text-color;
-            font-size: 0.9rem;
+            font-size: $text-sm;
         }
 
         .docket-id {
             color: $text-muted;
-            font-size: 0.8rem;
-            font-family: monospace;
+            font-size: $text-xs;
+            font-family: $font-mono;
         }
     }
 
     .docket-title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        line-height: 1.4;
+        font-family: $font-serif;
+        font-size: $text-lg;
+        font-weight: $fw-bold;
+        line-height: $lh-heading;
         margin: 0;
-        padding: 1rem 1.25rem;
+        padding: $unit-2 $unit-3;
         border-bottom: 1px solid $border-color;
         color: $text-black;
 
@@ -302,27 +289,28 @@
     }
 
     .docket-body {
-        padding: 1rem 1.25rem;
+        padding: $unit-2 $unit-3;
 
         h4 {
-            font-size: 0.75rem;
+            font-family: $font-sans;
+            font-size: $text-xs;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: $text-muted;
-            margin: 0 0 0.35rem 0;
+            margin: 0 0 $unit-05 0;
         }
 
         p {
-            font-size: 0.95rem;
+            font-size: $text-sm;
             margin: 0;
             color: $text-color;
-            line-height: 1.6;
+            line-height: $lh-relaxed;
         }
 
         hr {
             border: none;
             border-top: 1px solid $border-color;
-            margin: 0.75rem 0;
+            margin: $unit-105 0;
         }
     }
 
@@ -331,21 +319,21 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        gap: 0.75rem;
-        padding: 0.75rem 1.25rem;
+        gap: $unit-105;
+        padding: $unit-105 $unit-3;
         border-top: 1px solid $border-color;
-        background: $tertiary-color;
+        background: $color-parchment;
 
         .docket-pdf {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: $primary-color;
+            font-weight: $fw-semibold;
+            font-size: $text-sm;
+            color: $color-primary;
         }
 
         .docket-author-bio {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: $unit-105;
 
             .author-image {
                 width: 40px;
@@ -357,16 +345,16 @@
 
             .author-details {
                 .author-name {
-                    font-size: 0.9rem;
-                    font-weight: 600;
+                    font-size: $text-sm;
+                    font-weight: $fw-semibold;
                     color: $text-color;
                 }
 
                 .author-title {
                     display: block;
-                    font-size: 0.8rem;
+                    font-size: $text-xs;
                     color: $text-muted;
-                    line-height: 1.3;
+                    line-height: $lh-heading;
                 }
             }
         }
@@ -375,126 +363,127 @@
 
 // Content wrapper - contains the main body content
 .content-wrapper {
+
     // Intro paragraph (before first h2)
-    > p:first-child {
-        font-size: 1.2rem;
-        margin-bottom: $spacing-lg;
+    >p:first-child {
+        font-size: $text-xl;
+        margin-bottom: $unit-6;
         color: $text-color;
     }
 }
 
 // Section styling - subtle separation between sections
 .page-content .content-wrapper {
-    > h2 {
-        margin: $spacing-lg 0 $spacing-sm 0;
-        padding-top: $spacing-md;
+    >h2 {
+        margin: $unit-6 0 $unit-2 0;
+        padding-top: $unit-4;
         border-top: 1px solid $border-color;
     }
 
     // First h2 doesn't need top border
-    > p:first-child + h2,
-    > h2:first-child {
+    >p:first-child+h2,
+    >h2:first-child {
         border-top: none;
         padding-top: 0;
-        margin-top: $spacing-md;
+        margin-top: $unit-4;
     }
 }
 
-// Get Involved section
-.content-wrapper > h1#get-involved,
+// Get Involved callout — flat heritage panel: dark band + tinted body,
+// 1px structural borders (no decorative side stripes)
+.content-wrapper>h1#get-involved,
 .page-content h1#get-involved {
     display: block !important;
-    background: $primary-color;
-    color: white;
-    padding: $spacing-md;
-    margin: $spacing-xl 0 0 0;
+    background: $color-primary;
+    color: $color-white;
+    padding: $unit-3 $unit-4;
+    margin: $unit-8 0 0 0;
     text-align: center;
-    font-size: 1.8rem;
-    border-radius: $border-radius-md $border-radius-md 0 0;
+    font-size: $text-3xl;
+    border-radius: $radius-md $radius-md 0 0;
 }
 
-.content-wrapper > h1#get-involved + p {
-    background: rgba($primary-color, 0.08);
-    padding: $spacing-md;
+.content-wrapper>h1#get-involved+p {
+    background: $color-primary-lighter;
+    padding: $unit-4;
     margin: 0;
+    max-width: none; // callout blocks carry backgrounds — never measure-capped
     text-align: center;
-    border-left: 3px solid $primary-color;
-    border-right: 3px solid $primary-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
 }
 
-.content-wrapper > h1#get-involved + p + ul {
-    background: rgba($primary-color, 0.08);
-    padding: $spacing-sm $spacing-md $spacing-md;
+.content-wrapper>h1#get-involved+p+ul {
+    background: $color-primary-lighter;
+    padding: $unit-2 $unit-4 $unit-4;
     margin: 0;
+    max-width: none;
     text-align: center;
-    border-left: 3px solid $primary-color;
-    border-right: 3px solid $primary-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
     list-style: none;
 
     li {
         display: inline-block;
-        margin: $spacing-xs;
+        margin: $unit-1;
         padding: 0;
+    }
 
-        &:before {
-            display: none;
-        }
+    li a {
+        display: inline-block;
+        padding: $unit-105 $unit-3;
+        min-height: 44px;
+        background: $color-white;
+        box-shadow: inset 0 0 0 2px $color-primary;
+        border-radius: $radius-md;
+        color: $color-primary;
+        font-weight: $fw-semibold;
+        text-decoration: none;
+        transition: background-color $transition, color $transition;
 
-        a {
-            display: inline-block;
-            padding: 0.75rem 1.25rem;
-            min-height: 44px;
-            background: white;
-            border: 2px solid $primary-color;
-            border-radius: $border-radius-sm;
-            color: $primary-color;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-
-            &:hover {
-                background: $primary-color;
-                color: white;
-            }
+        &:hover {
+            background: $color-primary;
+            color: $color-white;
         }
     }
 }
 
-.content-wrapper > h1#get-involved + p + ul + p {
-    background: rgba($primary-color, 0.08);
-    padding: $spacing-sm $spacing-md $spacing-md;
+.content-wrapper>h1#get-involved+p+ul+p {
+    background: $color-primary-lighter;
+    padding: $unit-2 $unit-4 $unit-4;
     margin: 0;
+    max-width: none;
     text-align: center;
     font-style: italic;
-    color: $secondary-color;
-    border-left: 3px solid $primary-color;
-    border-right: 3px solid $primary-color;
-    border-bottom: 3px solid $primary-color;
-    border-radius: 0 0 $border-radius-md $border-radius-md;
+    color: $text-muted;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    border-radius: 0 0 $radius-md $radius-md;
 }
 
 // If there's no final paragraph, close the list
-.content-wrapper > h1#get-involved + p + ul:last-child {
-    border-bottom: 3px solid $primary-color;
-    border-radius: 0 0 $border-radius-md $border-radius-md;
+.content-wrapper>h1#get-involved+p+ul:last-child {
+    border-bottom: 1px solid $border-color;
+    border-radius: 0 0 $radius-md $radius-md;
 }
 
 @media (max-width: $breakpoint-mobile) {
     .page-content {
-        padding: $spacing-sm;
+        padding: $unit-2;
 
         h2 {
-            font-size: 1.2rem;
+            font-size: $text-xl;
         }
 
         p {
-            font-size: 1rem;
+            font-size: $text-md;
         }
     }
 
-    .content-wrapper > h1#get-involved + p + ul li {
+    .content-wrapper>h1#get-involved+p+ul li {
         display: block;
-        margin: $spacing-xs 0;
+        margin: $unit-1 0;
 
         a {
             display: block;

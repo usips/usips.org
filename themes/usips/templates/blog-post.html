@@ -3,6 +3,9 @@
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block extra_head %}
+<!-- Post body renders in Merriweather Regular/Italic — preload to avoid FOUT -->
+<link rel="preload" href="{{ get_url(path='fonts/Merriweather-Regular.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ get_url(path='fonts/Merriweather-Italic.woff2') }}" as="font" type="font/woff2" crossorigin>
 <meta property="og:title" content="{{ page.title }} | {{ config.title }}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{{ current_url | safe }}">

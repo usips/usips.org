@@ -6,29 +6,29 @@
 
     .hs-input {
         width: 100%;
-        padding: 0.8rem;
-        border: 1px solid $tertiary-color;
-        border-radius: $border-radius-sm;
-        font-size: 1rem;
-        margin-bottom: $spacing-sm;
-
-        &:focus {
-            outline: none;
-            border-color: $primary-color;
-            box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
-        }
+        padding: $unit-105;
+        border: 1px solid $input-border-color;
+        border-radius: $radius-sm;
+        font-size: $text-md;
+        margin-bottom: $unit-2;
+        background: $color-white;
+        color: $text-black;
     }
 
     .hs-button {
         width: 100%;
-        padding: $spacing-sm;
-        background-color: $primary-color;
-        color: white;
+        padding: $unit-2;
+        background-color: $color-primary;
+        color: $color-white;
         border: none;
-        border-radius: $border-radius-sm;
-        font-size: 1.1rem;
-        font-weight: 500;
+        border-radius: $radius-md;
+        font-size: $text-lg;
+        font-weight: $fw-semibold;
         cursor: pointer;
-        transition: background-color 0.2s ease;
+        transition: background-color $transition;
+
+        &:hover {
+            background-color: $color-primary-dark;
+        }
     }
 }

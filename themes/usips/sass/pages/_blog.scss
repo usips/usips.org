@@ -3,19 +3,20 @@
 .blog-listing {
     max-width: $content-max-width;
     margin: 0 auto;
-    padding: $spacing-md $spacing-sm;
+    padding: $unit-4 $unit-2;
 
     hr.post-divider {
-        margin-bottom: $spacing-sm;
+        margin-bottom: $unit-2;
     }
 }
 
 .blog-post-preview {
-    margin-bottom: $spacing-lg;
+    margin-bottom: $unit-6;
 
     .post-thumbnail {
-        margin-bottom: $spacing-sm;
-        border-radius: $border-radius-md;
+        margin-bottom: $unit-2;
+        border: 1px solid $border-color;
+        border-radius: $radius-md;
         overflow: hidden;
         position: relative;
 
@@ -30,11 +31,6 @@
             height: 300px;
             object-fit: cover;
             display: block;
-            transition: transform 0.3s ease;
-        }
-
-        &:hover img {
-            transform: scale(1.05);
         }
 
         &[data-image-position="top"] img {
@@ -49,30 +45,29 @@
             object-position: bottom;
         }
 
+        // Solid ink scrim (no gradients per USWDS) keeps title text AA-legible
         .title-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 1.5rem;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            transition: opacity 0.3s ease;
+            padding: $unit-2 $unit-3;
+            background: rgba(27, 27, 27, 0.82);
 
             h2 {
-                color: white;
-                font-size: 1.5rem;
-                line-height: 1.2;
-                margin: 0 0 $spacing-xs;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                color: $color-white;
+                font-size: $text-3xl;
+                line-height: $lh-tight;
+                margin: 0 0 $unit-1;
             }
 
             .post-meta {
                 color: rgba(255, 255, 255, 0.9);
-                font-size: 0.9rem;
+                font-size: $text-sm;
                 margin: 0;
                 display: flex;
                 align-items: center;
-                gap: 0.75rem;
+                gap: $unit-105;
 
                 .author-image {
                     width: 32px;
@@ -83,19 +78,19 @@
                 }
 
                 .author {
-                    font-weight: 500;
-                    color: white;
+                    font-weight: $fw-medium;
+                    color: $color-white;
                 }
 
                 time {
-                    color: rgba(255, 255, 255, 0.8);
+                    color: rgba(255, 255, 255, 0.85);
                 }
 
                 .social-link {
                     color: rgba(255, 255, 255, 0.9);
 
                     &:hover {
-                        color: white;
+                        color: $color-white;
                     }
 
                     .x-icon {
@@ -107,29 +102,24 @@
     }
 
     .post-description {
-        margin: $spacing-sm 0;
+        margin: $unit-2 0;
         color: $text-color;
     }
 
     .read-more {
         display: inline-block;
-        color: $primary-color;
-        text-decoration: none;
-        font-weight: 500;
-
-        &:hover {
-            text-decoration: underline;
-        }
+        color: $color-primary;
+        font-weight: $fw-medium;
     }
 }
 
 .post-meta {
     color: $text-muted;
-    font-size: 0.9rem;
-    margin-bottom: $spacing-sm;
+    font-size: $text-sm;
+    margin-bottom: $unit-2;
     display: flex;
     align-items: center;
-    gap: $spacing-sm;
+    gap: $unit-2;
 
     .author-image {
         width: 40px;
@@ -139,7 +129,7 @@
     }
 
     .author {
-        font-weight: 500;
+        font-weight: $fw-medium;
         color: $text-color;
     }
 
@@ -149,87 +139,81 @@
 }
 
 .post-description {
-    margin: $spacing-sm 0;
+    margin: $unit-2 0;
 }
 
 .read-more {
     display: inline-block;
-    color: $primary-color;
-    text-decoration: none;
-    font-weight: 500;
-
-    &:hover {
-        text-decoration: underline;
-    }
+    color: $color-primary;
+    font-weight: $fw-medium;
 }
 
 .blog-post {
     max-width: $content-max-width;
     margin: 0 auto;
-    padding: $spacing-md $spacing-sm;
+    padding: $unit-4 $unit-2;
 
     .post-header {
-        margin-bottom: $spacing-md;
+        margin-bottom: $unit-4;
         text-align: left;
 
         h1 {
-            margin-bottom: $spacing-sm;
-            font-size: 2rem;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
+            margin-bottom: $unit-2;
+            font-size: $text-4xl;
+            line-height: $lh-tight;
+            letter-spacing: -0.01em;
         }
 
         .post-divider {
-            margin: 1.5rem 0;
+            margin: $unit-3 0;
             border: none;
-            border-top: 2px solid $primary-color;
+            border-top: 2px solid $color-primary;
             width: 100%;
         }
     }
 
+    // Long-form reading: Merriweather at the USWDS reading size
     .post-content {
-        line-height: $line-height-base;
+        font-family: $font-serif;
+        font-size: $text-lg;
+        line-height: $lh-relaxed;
 
         h2,
         h3,
         h4 {
-            color: $primary-color;
-            margin: $spacing-md 0 $spacing-sm;
+            color: $color-primary;
+            margin: $unit-4 0 $unit-2;
         }
 
         p,
         addr {
-            margin-bottom: 1.5rem;
+            margin-bottom: $unit-3;
         }
 
         ul,
         ol {
-            margin: $spacing-sm 0;
-            padding-left: $spacing-md;
+            margin: $unit-2 0;
+            padding-left: $unit-4;
         }
     }
 
     .post-navigation {
-        margin-top: $spacing-lg;
-        padding-top: $spacing-md;
+        margin-top: $unit-6;
+        padding-top: $unit-4;
         border-top: 1px solid $border-color;
         display: flex;
         justify-content: space-between;
 
         a {
-            color: $primary-color;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
+            color: $color-primary;
         }
     }
 }
 
 .post-featured-image {
-    margin: 0 0 $spacing-md;
-    border-radius: $border-radius-md;
+    margin: 0 0 $unit-4;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
     overflow: hidden;
     position: relative;
     height: 400px;
@@ -258,25 +242,23 @@
         bottom: 0;
         left: 0;
         right: 0;
-        padding: $spacing-md;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        padding: $unit-3 $unit-4;
+        background: rgba(27, 27, 27, 0.82);
 
         h1 {
-            color: white;
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin: 0 0 $spacing-sm;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+            color: $color-white;
+            font-size: $text-4xl;
+            line-height: $lh-tight;
+            margin: 0 0 $unit-2;
         }
 
         .post-meta {
             color: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
+            font-size: $text-md;
             margin: 0;
             display: flex;
             align-items: center;
-            gap: $spacing-sm;
+            gap: $unit-2;
 
             .author-image {
                 width: 40px;
@@ -287,19 +269,19 @@
             }
 
             .author {
-                font-weight: 500;
-                color: white;
+                font-weight: $fw-medium;
+                color: $color-white;
             }
 
             time {
-                color: rgba(255, 255, 255, 0.8);
+                color: rgba(255, 255, 255, 0.85);
             }
 
             .social-link {
                 color: rgba(255, 255, 255, 0.9);
 
                 &:hover {
-                    color: white;
+                    color: $color-white;
                 }
 
                 .x-icon {
@@ -311,14 +293,15 @@
 }
 
 .author-bio {
-    margin: $spacing-xl 0 $spacing-md;
-    padding: $spacing-md;
-    background: rgba($tertiary-color, 0.2);
-    border-radius: $border-radius-md;
+    margin: $unit-8 0 $unit-4;
+    padding: $unit-4;
+    background: $color-parchment;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
 
     .author-info {
         display: flex;
-        gap: 1.5rem;
+        gap: $unit-3;
         align-items: flex-start;
 
         .author-image {
@@ -327,19 +310,18 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid $border-color;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .author-details {
             flex: 1;
 
             .author-name {
-                font-size: 1.2rem;
-                margin-bottom: $spacing-xs;
+                font-size: $text-xl;
+                margin-bottom: $unit-1;
                 color: $text-color;
                 display: flex;
                 align-items: center;
-                gap: $spacing-xs;
+                gap: $unit-1;
 
                 .social-link {
                     transform: translateY(0);
@@ -348,7 +330,7 @@
 
             .author-bio-text {
                 color: $text-color;
-                line-height: $line-height-base;
+                line-height: $lh-relaxed;
                 margin: 0;
             }
         }
@@ -357,7 +339,7 @@
 
 @media (max-width: $breakpoint-mobile) {
     .author-bio {
-        padding: 1.5rem;
+        padding: $unit-3;
 
         .author-info {
             flex-direction: column;
