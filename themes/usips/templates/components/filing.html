@@ -1,0 +1,14 @@
+{# Embed a single filing card in any markdown page.
+   Usage in markdown content:  {{</* filing id="91-FR-13529" */>}}
+   Output must stay free of blank lines / indentation — it is parsed as
+   markdown afterwards (see docket.html).
+#}
+{%- component filing(id: string) -%}
+{%- set filings = load_data(path="data/filings.toml") -%}
+{%- set matches = [f for f in filings.filing if f.id == id] -%}
+{%- if matches -%}
+<div class="docket-list">{{<docket.entry filing={matches[0]} />}}</div>
+{%- else -%}
+<p><em>Filing not found: <code>{{ id }}</code></em></p>
+{%- endif -%}
+{%- endcomponent filing -%}

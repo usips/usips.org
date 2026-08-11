@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% import "macros/docket.html" as docket %}
 
 {% block content %}
 {% set filings = load_data(path="data/filings.toml") %}
@@ -15,7 +14,7 @@
 
     <div class="docket-list">
       {% for entry in filings.filing %}
-        {{ docket::entry(filing=entry) }}
+        {{<docket.entry filing={entry} />}}
       {% endfor %}
     </div>
   </div>

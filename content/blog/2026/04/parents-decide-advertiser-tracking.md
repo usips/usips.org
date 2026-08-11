@@ -114,4 +114,4 @@ Tell them what the bill really does. Tell them you do not want your birthday han
 
 USIPS has formally opposed H.R. 8250 in writing to the House Committee on Energy and Commerce.
 
-{{ filing(id="HR-8250") }}
+{{<filing id="HR-8250" />}}

@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static website for the United States Internet Preservation Society, built with Zola 0.22.0 (Rust-based static site generator).
+Static website for the United States Internet Preservation Society, built with Zola 0.23.3 (Rust-based static site generator, Tera v2 templates).
+
+Note: Zola 0.23+ removed macros and shortcodes (Tera v2). Reusable rendering lives in `templates/components/` as Tera components (e.g. `{{</* filing id="HR-8250" */>}}` in markdown content). Components embedded in markdown must emit flush-left HTML with no blank lines, or CommonMark converts the output into code blocks. Components are closed scopes: `config` is not available inside them (use `load_data(path="config.toml")` if needed).
 
 ## Build and Development Commands
 
@@ -45,7 +47,8 @@ zola check --skip-external-links # Skip external link validation
   - `page.html` - Standard page template
   - `index.html` - Homepage
   - `blog.html` / `blog-post.html` - Blog templates
-  - `macros/` - Reusable header/footer components
+  - `macros/` - Header/footer partials (plain includes, despite the name)
+  - `components/` - Tera v2 components (docket entry, filing embed)
 - `sass/` - SCSS stylesheets (compiled automatically by Zola)
   - `abstracts/` - Mixins and functions
   - `base/` - Reset, typography, layout

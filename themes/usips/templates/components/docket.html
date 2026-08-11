@@ -1,0 +1,76 @@
+{# Render a single advocacy filing as a docket card.
+   `filing` is a TOML table from data/filings.toml.
+
+   URL derivation priority:  url > document_id > citation > bill
+   PDF derivation priority:  response_pdf > /doc/YYYY/MM/<response_file>
+
+   Type-aware labels:
+     federal_register      → "Proposed Rule"      / "Comment Letter (PDF)"
+     congressional_letter  → "Legislation"        / "Letter to Congress (PDF)"
+
+   NOTE: This component is embedded in markdown content (via the `filing`
+   component), where output goes through the markdown parser afterwards.
+   HTML must stay flush-left with no blank lines, or CommonMark turns it
+   into indented code blocks — hence the aggressive {%- -%} trimming.
+#}
+{%- component docket.entry(filing: map) -%}
+{%- set citation_slug = (filing?.citation or "") | replace(from=" ", to="-") -%}
+{%- set bill_lower = (filing?.bill or "") | lower | replace(from=".", to="") -%}
+{%- set bill_path = (bill_lower | replace(from="hr ", to="house-bill/")) if bill_lower[:3] == "hr " else ((bill_lower | replace(from="s ", to="senate-bill/")) if bill_lower[:2] == "s " else "") -%}
+{%- set congress_num = filing?.congress or 119 -%}
+{%- set ext_url = filing?.url or (("https://www.federalregister.gov/d/" ~ filing.document_id) if filing?.document_id else "") or (("https://www.federalregister.gov/citation/" ~ citation_slug) if filing?.citation else "") or (("https://www.congress.gov/bill/" ~ congress_num ~ "th-congress/" ~ bill_path) if bill_path else "") -%}
+{%- set pdf_path = filing?.response_pdf or (("/doc/" ~ (filing.date | date(format="%Y")) ~ "/" ~ (filing.date | date(format="%m")) ~ "/" ~ filing.response_file) if filing?.response_file else "") -%}
+<article class="docket-entry">
+<header class="docket-header">
+<time datetime="{{ filing.date }}">{{ filing.date | date(format="%B %-d, %Y") }}</time>
+{%- if filing.agency %}
+<span class="docket-agency">{{ filing.agency }}</span>
+{%- endif %}
+{%- if filing.bill or filing.docket or filing.rin or filing.citation %}
+<span class="docket-id">
+{%- if filing.bill %}{{ filing.bill }}{% endif -%}
+{%- if filing.docket %}{% if filing.bill %} · {% endif %}{{ filing.docket }}{% endif -%}
+{%- if filing.rin %}{% if filing.bill or filing.docket %} · {% endif %}{{ filing.rin }}{% endif -%}
+{%- if filing.citation %}{% if filing.bill or filing.docket or filing.rin %} · {% endif %}{{ filing.citation }}{% endif -%}
+</span>
+{%- endif %}
+</header>
+<div class="docket-title">
+{%- if ext_url %}<a href="{{ ext_url }}">{{ filing.title }}</a>{% else %}{{ filing.title }}{% endif %}
+</div>
+<div class="docket-body">
+{%- if filing.summary %}
+<h4>{% if filing.type == "congressional_letter" %}Legislation{% else %}Proposed Rule{% endif %}</h4>
+<p>{{ filing.summary }}</p>
+{%- endif %}
+{%- if filing.summary and filing.response_summary %}
+<hr>
+{%- endif %}
+{%- if filing.response_summary %}
+<h4>Our Response</h4>
+<p>{{ filing.response_summary }}</p>
+{%- endif %}
+</div>
+<footer class="docket-footer">
+{%- if pdf_path %}
+<a href="{{ pdf_path }}" class="docket-pdf">{% if filing.type == "congressional_letter" %}Letter to Congress (PDF){% else %}Comment Letter (PDF){% endif %}</a>
+{%- endif %}
+{%- if filing.author %}
+{#- Components are closed scopes with no `config` context — read it directly -#}
+{%- set site_config = load_data(path="config.toml", format="toml") -%}
+{%- set author = site_config.extra.authors[filing.author] %}
+<div class="docket-author-bio">
+{%- if author.image %}
+<img src="{{ get_url(path=author.image) }}" alt="{{ author.name }}" class="author-image">
+{%- endif %}
+<div class="author-details">
+<span class="author-name">{{ author.name }}</span>
+{%- if author.title %}
+<span class="author-title">{{ author.title }}</span>
+{%- endif %}
+</div>
+</div>
+{%- endif %}
+</footer>
+</article>
+{%- endcomponent docket.entry -%}
