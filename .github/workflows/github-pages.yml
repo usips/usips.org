@@ -1,4 +1,4 @@
-name: Deploy to Github Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -11,14 +11,25 @@ on:
       - 'package.json'
       - 'tsconfig.json'
       - '.github/workflows/github-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build_and_deploy:
+  build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    env:
+      ZOLA_VERSION: "0.23.3"
     steps:
       - name: 'checkout'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: 'setup node'
         uses: actions/setup-node@v4
@@ -32,18 +43,20 @@ jobs:
       - name: 'compile typescript'
         run: npm run build:ts
 
+      - name: 'install zola'
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          curl -sL "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar xz -C "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
       - name: 'update build timestamp'
         run: |
           current_time=$(date -u +"%Y-%m-%d-%H-%M")
           sed -i "s/build_timestamp = .*/build_timestamp = \"$current_time\"/" config.toml
 
-      - name: 'build site with zola'
-        uses: shalzz/zola-deploy-action@master
-        env:
-          PAGES_BRANCH: master
-          BUILD_DIR: .
-          BUILD_ONLY: true
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+      - name: 'build site'
+        run: zola build --base-url https://usips.org
 
       - name: 'check file sizes (14KB limit)'
         run: |
@@ -77,11 +90,18 @@ jobs:
             echo "All checked HTML files are within the 14KB limit."
           fi
 
-      - name: 'deploy to github pages'
-        uses: shalzz/zola-deploy-action@master
-        env:
-          PAGES_BRANCH: master
-          BUILD_DIR: .
-          BUILD_FLAGS: "--base-url https://usips.org"
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
-          REPOSITORY: usips/usips.github.io
+      - name: 'upload artifact'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 'deploy'
+        id: deployment
+        uses: actions/deploy-pages@v5
