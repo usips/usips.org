@@ -43,6 +43,4 @@ Unlike commercial DDoS protection services:
 
 ## Get involved
 
-Tartarus is under active development. If you're a developer interested in helping protect the Lower Internet, check out the source code on [GitHub](https://github.com/usips/tartarus-rs). If you would like to financially support our development, please sponsor us on [GitHub Sponsors](https://github.com/sponsors/usips)!
-
 If you run an independent website and need help, [reach out to Joshua Moon](/us/board).
